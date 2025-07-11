@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-from RobustML.advertrain.dependencies.cleverhans.fast_gradient_method import \
+from robustML.advertrain.dependencies.cleverhans.fast_gradient_method import \
     fast_gradient_method
 
 torch.manual_seed(0)

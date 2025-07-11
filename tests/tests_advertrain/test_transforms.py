@@ -2,7 +2,7 @@ from torchvision.transforms import (ColorJitter, Compose, Pad, RandomAffine,
                                     RandomApply, RandomHorizontalFlip,
                                     RandomVerticalFlip, Resize, ToTensor)
 
-from RobustML.advertrain.transforms import DataTransformations
+from robustML.advertrain.transforms import DataTransformations
 
 
 def test_initialization():

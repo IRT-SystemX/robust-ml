@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 import torch
 
-from RobustML.advertrain.dependencies.cleverhans.projected_gradient_descent import \
+from robustML.advertrain.dependencies.cleverhans.projected_gradient_descent import \
     projected_gradient_descent
 
 torch.manual_seed(0)

@@ -20,6 +20,3 @@ anybadge --overwrite --label pylint --value=$PYLINT_SCORE --file=_static/pylint/
 # Launch ruff check
 
 ruff check robustML/ > scripts/ruff_report.txt 
-
-
-

@@ -1,6 +1,6 @@
 import torch
 import pytest
-from RobustML.advertrain.dependencies.trades import squared_l2_norm, l2_norm, trades_loss
+from robustML.advertrain.dependencies.trades import squared_l2_norm, l2_norm, trades_loss
 
 torch.manual_seed(0)
 

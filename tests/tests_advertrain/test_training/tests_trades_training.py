@@ -1,6 +1,6 @@
 import torch
 import pytest
-from RobustML.advertrain.training.trades_training import TRADESTraining
+from robustML.advertrain.training.trades_training import TRADESTraining
 
 torch.manual_seed(0)
 

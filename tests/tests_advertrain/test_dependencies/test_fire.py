@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-from RobustML.advertrain.dependencies.fire import (entropy_loss, fire_loss,
+from robustML.advertrain.dependencies.fire import (entropy_loss, fire_loss,
                                                    noise_loss)
 
 torch.manual_seed(0)

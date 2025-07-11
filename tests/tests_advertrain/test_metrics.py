@@ -5,7 +5,7 @@ os.getcwd()
 import pytest
 import torch
 
-from RobustML.advertrain.metrics import Metrics
+from robustML.advertrain.metrics import Metrics
 
 
 @pytest.fixture

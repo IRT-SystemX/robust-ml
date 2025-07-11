@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 
-from RobustML.advertrain.models import ConvNet, ResNet
+from robustML.advertrain.models import ConvNet, ResNet
 
 torch.manual_seed(0)
 

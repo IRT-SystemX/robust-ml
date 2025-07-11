@@ -1,17 +1,15 @@
 <div align="center">
     <h1 style="font-size: large; font-weight: bold;">Robust-ML</h1>
 </div><div align="center">
-    <a href="#">
-        <img src="https://img.shields.io/badge/Python-3.8-efefef">
-    </a>
-	  <a href="#">
-        <img src="https://img.shields.io/badge/Python-3.9-efefef">
+	<a href="#">
+        <img src="https://img.shields.io/badge/Python-3.8%20--%203.10-blue">
     </a>
     <a href="#">
-        <img src="https://img.shields.io/badge/Python-3.10-efefef">
+        <img src="https://img.shields.io/badge/GPU-Required-red">
     </a>
     <a href="#">
-        <img src="https://img.shields.io/badge/Licence-Apache%202.0-blue">
+        <img src="https://img.shields.io/badge/Requires-CUDA-blue">
+    </a>
     </a>
 	<a href="_static/pylint/pylint.txt">
         <img src="_static/pylint/pylint.svg" alt="Pylint Score">
@@ -26,7 +24,7 @@
 <br>
 
 Robust-ml is a library of training methods designed to improve the robustness of computer vision models.
-
+Warning : This library requires to have a GPU, CPU-only mode is not supported.
 ## Getting started
 
 To install and use the library, it is recommended to create a Python virtual environment. You can do that with virtualenv, as follows:

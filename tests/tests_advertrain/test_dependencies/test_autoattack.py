@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-from RobustML.advertrain.dependencies.autoattack import (APGDAttack, L0_norm,
+from robustML.advertrain.dependencies.autoattack import (APGDAttack, L0_norm,
                                                          L1_norm,
                                                          L1_projection,
                                                          L2_norm)

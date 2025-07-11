@@ -1,7 +1,6 @@
 # Build package artefacts
 build/
-robust-ml.egg-info
-
+robust_ml.egg-info/
 # Sphinx documentation
 docs/_build/
 

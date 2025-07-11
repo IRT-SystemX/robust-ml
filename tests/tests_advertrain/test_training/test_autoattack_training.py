@@ -3,8 +3,8 @@ import torch
 from torch.nn import Linear, Module
 from torch.optim import SGD
 
-from RobustML.advertrain.dependencies.autoattack import APGDAttack
-from RobustML.advertrain.training.autoattack_training import AutoAttackTraining
+from robustML.advertrain.dependencies.autoattack import APGDAttack
+from robustML.advertrain.training.autoattack_training import AutoAttackTraining
 
 
 class SimpleModel(Module):
