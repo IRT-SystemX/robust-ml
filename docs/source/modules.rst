@@ -1,4 +1,4 @@
-advertrain
+🔎 Package robust-ml
 ==========
 
 .. toctree::

@@ -2,6 +2,6 @@
 
 🔄 Changelog
 ===================
-.. include:: ../../CHANGELOG.md
+.. include:: ../../Changelog.md
    :parser: myst_parser.sphinx_
-   :start-after: # CHANGELOG
+   :start-after: # Changelog

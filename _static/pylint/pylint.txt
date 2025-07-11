@@ -1,0 +1,193 @@
+************* Module robustML.advertrain.constants
+robustML\advertrain\constants.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+************* Module robustML.advertrain.metrics
+robustML\advertrain\metrics.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+robustML\advertrain\metrics.py:91:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+robustML\advertrain\metrics.py:107:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+robustML\advertrain\metrics.py:134:13: W0612: Unused variable 'loss' (unused-variable)
+************* Module robustML.advertrain.models
+robustML\advertrain\models.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+robustML\advertrain\models.py:8:0: C0115: Missing class docstring (missing-class-docstring)
+robustML\advertrain\models.py:225:0: R0902: Too many instance attributes (31/15) (too-many-instance-attributes)
+robustML\advertrain\models.py:321:0: R0902: Too many instance attributes (33/15) (too-many-instance-attributes)
+************* Module robustML.advertrain.transforms
+robustML\advertrain\transforms.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+************* Module robustML.advertrain.dependencies.autoattack
+robustML\advertrain\dependencies\autoattack.py:307:0: C0301: Line too long (170/120) (line-too-long)
+robustML\advertrain\dependencies\autoattack.py:429:0: C0301: Line too long (163/120) (line-too-long)
+robustML\advertrain\dependencies\autoattack.py:431:0: C0301: Line too long (163/120) (line-too-long)
+robustML\advertrain\dependencies\autoattack.py:437:0: C0301: Line too long (170/120) (line-too-long)
+robustML\advertrain\dependencies\autoattack.py:517:0: C0301: Line too long (153/120) (line-too-long)
+robustML\advertrain\dependencies\autoattack.py:551:0: C0301: Line too long (147/120) (line-too-long)
+robustML\advertrain\dependencies\autoattack.py:561:0: C0301: Line too long (123/120) (line-too-long)
+robustML\advertrain\dependencies\autoattack.py:602:0: C0301: Line too long (172/120) (line-too-long)
+robustML\advertrain\dependencies\autoattack.py:614:0: C0301: Line too long (121/120) (line-too-long)
+robustML\advertrain\dependencies\autoattack.py:11:0: R0402: Use 'from torch import nn' instead (consider-using-from-import)
+robustML\advertrain\dependencies\autoattack.py:115:0: R0902: Too many instance attributes (23/15) (too-many-instance-attributes)
+robustML\advertrain\dependencies\autoattack.py:146:4: R0917: Too many positional arguments (15/5) (too-many-positional-arguments)
+robustML\advertrain\dependencies\autoattack.py:222:4: R0917: Too many positional arguments (6/5) (too-many-positional-arguments)
+robustML\advertrain\dependencies\autoattack.py:222:65: W0613: Unused argument 'y5' (unused-argument)
+robustML\advertrain\dependencies\autoattack.py:263:8: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
+robustML\advertrain\dependencies\autoattack.py:272:12: W0702: No exception type(s) specified (bare-except)
+robustML\advertrain\dependencies\autoattack.py:253:4: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+robustML\advertrain\dependencies\autoattack.py:276:4: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+robustML\advertrain\dependencies\autoattack.py:336:22: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+robustML\advertrain\dependencies\autoattack.py:348:34: C3001: Lambda expression assigned to a variable. Define a function using the "def" keyword instead. (unnecessary-lambda-assignment)
+robustML\advertrain\dependencies\autoattack.py:467:28: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+robustML\advertrain\dependencies\autoattack.py:469:22: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+robustML\advertrain\dependencies\autoattack.py:307:4: R0912: Too many branches (39/12) (too-many-branches)
+robustML\advertrain\dependencies\autoattack.py:307:4: R0915: Too many statements (167/50) (too-many-statements)
+robustML\advertrain\dependencies\autoattack.py:393:8: W0612: Unused variable 'counter' (unused-variable)
+robustML\advertrain\dependencies\autoattack.py:411:8: W0612: Unused variable 'n_reduced' (unused-variable)
+robustML\advertrain\dependencies\autoattack.py:551:49: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+robustML\advertrain\dependencies\autoattack.py:552:18: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+robustML\advertrain\dependencies\autoattack.py:561:22: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+robustML\advertrain\dependencies\autoattack.py:564:8: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+robustML\advertrain\dependencies\autoattack.py:584:30: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+robustML\advertrain\dependencies\autoattack.py:586:28: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+robustML\advertrain\dependencies\autoattack.py:599:26: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+robustML\advertrain\dependencies\autoattack.py:517:4: R0912: Too many branches (20/12) (too-many-branches)
+robustML\advertrain\dependencies\autoattack.py:517:4: R0915: Too many statements (60/50) (too-many-statements)
+robustML\advertrain\dependencies\autoattack.py:517:98: W0613: Unused argument 'x_init' (unused-argument)
+robustML\advertrain\dependencies\autoattack.py:549:8: W0612: Unused variable 'loss' (unused-variable)
+robustML\advertrain\dependencies\autoattack.py:602:4: R0917: Too many positional arguments (6/5) (too-many-positional-arguments)
+robustML\advertrain\dependencies\autoattack.py:627:18: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+robustML\advertrain\dependencies\autoattack.py:630:22: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+robustML\advertrain\dependencies\autoattack.py:625:8: W0612: Unused variable 'eps_target' (unused-variable)
+robustML\advertrain\dependencies\autoattack.py:212:8: W0201: Attribute 'orig_dim' defined outside __init__ (attribute-defined-outside-init)
+robustML\advertrain\dependencies\autoattack.py:213:8: W0201: Attribute 'ndims' defined outside __init__ (attribute-defined-outside-init)
+robustML\advertrain\dependencies\autoattack.py:218:8: W0201: Attribute 'n_iter_2' defined outside __init__ (attribute-defined-outside-init)
+robustML\advertrain\dependencies\autoattack.py:219:8: W0201: Attribute 'n_iter_min' defined outside __init__ (attribute-defined-outside-init)
+robustML\advertrain\dependencies\autoattack.py:220:8: W0201: Attribute 'size_decr' defined outside __init__ (attribute-defined-outside-init)
+************* Module robustML.advertrain.dependencies.dropblock
+robustML\advertrain\dependencies\dropblock.py:158:27: W0511: FIXME finish comparisons of fast vs not (fixme)
+robustML\advertrain\dependencies\dropblock.py:7:0: R0402: Use 'from torch import nn' instead (consider-using-from-import)
+robustML\advertrain\dependencies\dropblock.py:11:0: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+robustML\advertrain\dependencies\dropblock.py:26:25: W3301: Do not use nested call of 'min'; it's possible to do 'min(block_size, W, H)' instead (nested-min-max)
+robustML\advertrain\dependencies\dropblock.py:24:4: W0612: Unused variable 'B' (unused-variable)
+robustML\advertrain\dependencies\dropblock.py:79:0: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+robustML\advertrain\dependencies\dropblock.py:94:25: W3301: Do not use nested call of 'min'; it's possible to do 'min(block_size, W, H)' instead (nested-min-max)
+robustML\advertrain\dependencies\dropblock.py:92:4: W0612: Unused variable 'B' (unused-variable)
+robustML\advertrain\dependencies\dropblock.py:141:4: R0917: Too many positional arguments (8/5) (too-many-positional-arguments)
+robustML\advertrain\dependencies\dropblock.py:151:8: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)
+robustML\advertrain\dependencies\dropblock.py:160:4: C0116: Missing function or method docstring (missing-function-docstring)
+robustML\advertrain\dependencies\dropblock.py:163:8: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+************* Module robustML.advertrain.dependencies.fire
+robustML\advertrain\dependencies\fire.py:110:0: C0301: Line too long (177/120) (line-too-long)
+robustML\advertrain\dependencies\fire.py:145:0: C0301: Line too long (165/120) (line-too-long)
+robustML\advertrain\dependencies\fire.py:33:0: R0917: Too many positional arguments (14/5) (too-many-positional-arguments)
+robustML\advertrain\dependencies\fire.py:119:20: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+robustML\advertrain\dependencies\fire.py:126:20: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+robustML\advertrain\dependencies\fire.py:33:0: R0912: Too many branches (13/12) (too-many-branches)
+robustML\advertrain\dependencies\fire.py:33:0: R0915: Too many statements (58/50) (too-many-statements)
+robustML\advertrain\dependencies\fire.py:97:8: W0612: Unused variable 'batch_size' (unused-variable)
+************* Module robustML.advertrain.dependencies.trades
+robustML\advertrain\dependencies\trades.py:8:0: R0402: Use 'from torch import nn' instead (consider-using-from-import)
+robustML\advertrain\dependencies\trades.py:10:0: R0402: Use 'from torch import optim' instead (consider-using-from-import)
+robustML\advertrain\dependencies\trades.py:41:0: R0917: Too many positional arguments (10/5) (too-many-positional-arguments)
+************* Module robustML.advertrain.dependencies.cleverhans.fast_gradient_method
+robustML\advertrain\dependencies\cleverhans\fast_gradient_method.py:52:0: C0301: Line too long (123/120) (line-too-long)
+robustML\advertrain\dependencies\cleverhans\fast_gradient_method.py:16:0: R0917: Too many positional arguments (9/5) (too-many-positional-arguments)
+robustML\advertrain\dependencies\cleverhans\fast_gradient_method.py:47:12: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+************* Module robustML.advertrain.dependencies.cleverhans.projected_gradient_descent
+robustML\advertrain\dependencies\cleverhans\projected_gradient_descent.py:69:0: C0301: Line too long (122/120) (line-too-long)
+robustML\advertrain\dependencies\cleverhans\projected_gradient_descent.py:75:0: C0301: Line too long (151/120) (line-too-long)
+robustML\advertrain\dependencies\cleverhans\projected_gradient_descent.py:17:0: R0917: Too many positional arguments (13/5) (too-many-positional-arguments)
+************* Module robustML.advertrain.dependencies.cleverhans.utils
+robustML\advertrain\dependencies\cleverhans\utils.py:30:0: C0301: Line too long (152/120) (line-too-long)
+robustML\advertrain\dependencies\cleverhans\utils.py:22:4: R1720: Unnecessary "elif" after "raise", remove the leading "el" from "elif" (no-else-raise)
+robustML\advertrain\dependencies\cleverhans\utils.py:23:25: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
+robustML\advertrain\dependencies\cleverhans\utils.py:83:25: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
+************* Module robustML.advertrain.training.adversarial_training
+robustML\advertrain\training\adversarial_training.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+robustML\advertrain\training\adversarial_training.py:25:4: R0917: Too many positional arguments (6/5) (too-many-positional-arguments)
+************* Module robustML.advertrain.training.autoattack_training
+robustML\advertrain\training\autoattack_training.py:58:0: C0301: Line too long (122/120) (line-too-long)
+robustML\advertrain\training\autoattack_training.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+robustML\advertrain\training\autoattack_training.py:20:4: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+************* Module robustML.advertrain.training.classical_training
+robustML\advertrain\training\classical_training.py:155:0: C0301: Line too long (121/120) (line-too-long)
+robustML\advertrain\training\classical_training.py:158:0: C0301: Line too long (199/120) (line-too-long)
+robustML\advertrain\training\classical_training.py:159:0: C0301: Line too long (193/120) (line-too-long)
+robustML\advertrain\training\classical_training.py:219:0: C0301: Line too long (133/120) (line-too-long)
+robustML\advertrain\training\classical_training.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+robustML\advertrain\training\classical_training.py:37:48: W0613: Unused argument 'epoch' (unused-argument)
+robustML\advertrain\training\classical_training.py:79:8: W0101: Unreachable code (unreachable)
+robustML\advertrain\training\classical_training.py:53:48: W0613: Unused argument 'epoch' (unused-argument)
+robustML\advertrain\training\classical_training.py:82:48: W0613: Unused argument 'epoch' (unused-argument)
+robustML\advertrain\training\classical_training.py:106:4: R0917: Too many positional arguments (6/5) (too-many-positional-arguments)
+robustML\advertrain\training\classical_training.py:219:4: R0917: Too many positional arguments (6/5) (too-many-positional-arguments)
+************* Module robustML.advertrain.training.fire_training
+robustML\advertrain\training\fire_training.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+robustML\advertrain\training\fire_training.py:7:0: C0115: Missing class docstring (missing-class-docstring)
+robustML\advertrain\training\fire_training.py:8:4: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+robustML\advertrain\training\fire_training.py:55:14: W0612: Unused variable 'a' (unused-variable)
+robustML\advertrain\training\fire_training.py:55:17: W0612: Unused variable 'b' (unused-variable)
+robustML\advertrain\training\fire_training.py:55:20: W0612: Unused variable 'c' (unused-variable)
+************* Module robustML.advertrain.training.trades_training
+robustML\advertrain\training\trades_training.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+robustML\advertrain\training\trades_training.py:8:0: C0115: Missing class docstring (missing-class-docstring)
+robustML\advertrain\training\trades_training.py:9:4: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+************* Module robustML.advertrain.training.__init__
+robustML\advertrain\training\__init__.py:1:0: R0801: Similar lines in 2 files
+==robustML.advertrain.training.fire_training:[106:117]
+==robustML.advertrain.training.trades_training:[103:114]
+            )
+
+            output = self.model(x)
+            pred = torch.argmax(output, dim=1)
+
+            self.metrics.update(x, y, pred, loss)
+
+        return (
+            loss.item(),
+            len(x),
+        ) (duplicate-code)
+robustML\advertrain\training\__init__.py:1:0: R0801: Similar lines in 2 files
+==robustML.advertrain.training.fire_training:[70:92]
+==robustML.advertrain.training.trades_training:[105:114]
+            output = self.model(x)
+            pred = torch.argmax(output, dim=1)
+
+            self.metrics.update(x, y, pred, loss)
+
+        return (
+            loss.item(),
+            len(x),
+        ) (duplicate-code)
+robustML\advertrain\training\__init__.py:1:0: R0801: Similar lines in 2 files
+==robustML.advertrain.training.fire_training:[75:95]
+==robustML.advertrain.training.trades_training:[73:92]
+        return (
+            loss.item(),
+            len(x),
+        )
+
+    def val_batch(self, x: torch.Tensor, y: torch.Tensor, epoch: int) -> tuple[float, int]:
+        """
+        Validate the model for one batch of data.
+
+        Args:
+            x (torch.Tensor): The input data.
+            y (torch.Tensor): The labels corresponding to the input data.
+            epoch (int): The current epoch number.
+
+        Returns:
+            tuple[float, int]: A tuple containing the loss value and the batch size.
+        """
+        x, y = x.to(self.device), y.to(self.device)
+
+        with torch.no_grad(): (duplicate-code)
+robustML\advertrain\training\__init__.py:1:0: R0801: Similar lines in 2 files
+==robustML.advertrain.dependencies.fire:[110:116]
+==robustML.advertrain.dependencies.trades:[87:93]
+            grad = torch.autograd.grad(loss_kl, [x_adv])[0]
+            x_adv = x_adv.detach() + step_size * torch.sign(grad.detach())
+            x_adv = torch.min(
+                torch.max(x_adv, x_natural - epsilon), x_natural + epsilon
+            )
+            x_adv = torch.clamp(x_adv, 0.0, 1.0) (duplicate-code)
+
+-----------------------------------
+Your code has been rated at 8.91/10
+

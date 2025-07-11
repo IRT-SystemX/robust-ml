@@ -1,6 +1,72 @@
-# Documentation
+<div align="center">
+    <h1 style="font-size: large; font-weight: bold;">Robust-ML</h1>
+</div><div align="center">
+    <a href="#">
+        <img src="https://img.shields.io/badge/Python-3.8-efefef">
+    </a>
+	  <a href="#">
+        <img src="https://img.shields.io/badge/Python-3.9-efefef">
+    </a>
+    <a href="#">
+        <img src="https://img.shields.io/badge/Python-3.10-efefef">
+    </a>
+    <a href="#">
+        <img src="https://img.shields.io/badge/Licence-Apache%202.0-blue">
+    </a>
+	<a href="_static/pylint/pylint.txt">
+        <img src="_static/pylint/pylint.svg" alt="Pylint Score">
+    </a>
+    <a href="_static/flake8/index.html">
+        <img src="_static/flake8/flake8.svg" alt="Flake8 Report">
+    </a>
+	<a href="_static/coverage/index.html">
+        <img src="_static/coverage/coverage.svg" alt="Coverage report">
+    </a>
+</div>
+<br>
 
-advertrain is a library of training methods designed to improve the robustness of computer vision models.
+Robust-ml is a library of training methods designed to improve the robustness of computer vision models.
+
+## Getting started
+
+To install and use the library, it is recommended to create a Python virtual environment. You can do that with virtualenv, as follows:
+
+### Setting environement
+```bash
+pip install virtualenv
+virtualenv -p <path/to/python3.9> myenv
+source myenv/bin/activate
+```
+### Installation
+Once your virtual environment is activated, you can install the uqmodels library directly from Pypi by typing :
+
+```bash
+pip install robust-ml
+```
+
+This command will install the robust-ml package and all required dependencies.
+
+## Input/Output
+
+### Input
+
+Advertrain takes a torch dataloader as input.
+
+### Ouput
+
+As output, the library returns a model saved as a local .pth file.
+
+## Example
+
+You have to generate a dataloader in pytorch.
+
+```
+trainer = AdversarialTraining(model=your_architecture, optimizer=your_optimizer, loss_func=your_criterion, device=your_device, epsilon=your_epsilon)
+trainer.fit(epochs=2, train_dataloader=your_train_dataloader, val_dataloader=your_val_dataloader, patience=2, checkpoint=your_path)
+```
+
+For more informations, you can follow the notebook example here :
+[Notebook](examples/training.ipynb)
 
 ## Architectures
 
@@ -69,49 +135,6 @@ ICML 2020
 
 TRADES minimizes a regularized surrogate loss L(.,.) (e.g., the cross-entropy loss) for adversarial training
 [Trades](https://github.com/yaodongyu/TRADES)
-
-## Input/Output
-
-### Input
-
-advertrain takes a troch dataloader in input.
-
-### Ouput
-
-As output, the library returns a model saved as a local .pth file.
-
-## How to use the RobustML library ?
-
-### Installation
- 
-This library requires python 3.8 or later, and is accessible with
- 
-```
-import RobustML
-```
- 
-after having:
- 
-- installed it via pip, e.g. by a `pip install <RobustML_dir>` after cloning,
-- or added this project's directory to the Python path, e.g. `sys.path.insert(0, <RobustML_dir>)` after cloning.
- 
-Then :
- 
-```
-pip install -r <RobustML_dir>/requirements.txt
-```
-
-### Example
-
-You have to generate a dataloader in pytorch.
-
-```
-trainer = AdversarialTraining(model=your_architecture, optimizer=your_optimizer, loss_func=your_criterion, device=your_device, epsilon=your_epsilon)
-trainer.fit(epochs=2, train_dataloader=your_train_dataloader, val_dataloader=your_val_dataloader, patience=2, checkpoint=your_path)
-```
-
-For more informations, you can follow the notebook example here :
-[Notebook](https://git.irt-systemx.fr/confianceai/ec_4/as434_robustness_platform/-/blob/0.1.1-rc/examples/training.ipynb?ref_type=tags)
 
 ## Contributors and Support
 

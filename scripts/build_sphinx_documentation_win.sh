@@ -3,13 +3,13 @@ cd ..
 cp -R _static docs/source/
 cp -R examples docs/source/
 
-# Delete old uqmodels modules
+# Delete old robustML modules
 
-rm -f docs/source/uqmodels*.rst
+rm -f docs/source/robustML*.rst
 
 # Generate package docstring
 
-sphinx-apidoc -o docs/source uqmodels
+sphinx-apidoc -o docs/source robustML
 
 # Generate HTML
 

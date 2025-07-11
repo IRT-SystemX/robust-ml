@@ -6,11 +6,18 @@
 Welcome to RobustML's documentation!
 ====================================
 
+.. include:: ../../README.md
+   :parser: myst_parser.sphinx_
+   :end-before: ## Getting started
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-
+   guidelines
+   architecture
+   changelog
+   modules
 
 Indices and tables
 ==================
