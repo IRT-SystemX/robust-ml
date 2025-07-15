@@ -1276,7 +1276,7 @@
                     <td>0</td>
                     <td>refactor</td>
                     <td></td>
-                    <td>Similar lines in 2 files<br />==robustML.advertrain.dependencies.fire:[110:116]<br />==robustML.advertrain.dependencies.trades:[87:93]<br />                    grad = torch.autograd.grad(loss_kl, [x_adv])[0]<br />                    x_adv = x_adv.detach() + step_size * torch.sign(grad.detach())<br />                    x_adv = torch.min(<br />                        torch.max(x_adv, x_natural - epsilon), x_natural + epsilon<br />                    )<br />                    x_adv = torch.clamp(x_adv, 0.0, 1.0)</td>
+                    <td>Similar lines in 2 files<br />==robustML.advertrain.dependencies.fire:[110:116]<br />==robustML.advertrain.dependencies.trades:[87:93]<br />            grad = torch.autograd.grad(loss_kl, [x_adv])[0]<br />            x_adv = x_adv.detach() + step_size * torch.sign(grad.detach())<br />            x_adv = torch.min(<br />                torch.max(x_adv, x_natural - epsilon), x_natural + epsilon<br />            )<br />            x_adv = torch.clamp(x_adv, 0.0, 1.0)</td>
                     <td>duplicate-code</td>
                     <td>R0801</td>
                   </tr>

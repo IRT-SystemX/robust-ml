@@ -306,7 +306,7 @@ BETA = 1
 <section id="Fit-the-model">
 <h2>Fit the model<a class="headerlink" href="#Fit-the-model" title="Link to this heading"></a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>path = os.path.join(MODELS_PATH,
@@ -339,8 +339,8 @@ Using &#39;results/resnetdropblock_trades_training&#39; directory
 <div class="highlight"><pre>
 /home/jovyan/Maturation/env-robustml/lib/python3.10/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction=&#39;sum&#39; instead.
   warnings.warn(warning.format(ret))
-Epochs 1/2 : Training: 100%|██████████| 750/750 [02:57&lt;00:00,  4.22it/s]
-Validation: 100%|██████████| 33/33 [00:08&lt;00:00,  4.07it/s]
+Epochs 1/2 : Training: 100%|██████████| 750/750 [02:43&lt;00:00,  4.59it/s]
+Validation: 100%|██████████| 33/33 [00:08&lt;00:00,  3.93it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -349,45 +349,17 @@ Validation: 100%|██████████| 33/33 [00:08&lt;00:00,  4.07it/
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Epoch 1/2
-Train Loss:  0.690, Acc:  0.674, Recall:  0.668, Precision:  0.681,F1 Score:  0.675
-Validation Loss:  0.613, Acc:  0.742, Recall:  0.639, Precision:  0.759,F1 Score:  0.694
-Validation loss decreased (inf --&gt; 0.612706). Saving model ...
+Train Loss:  0.690, Acc:  0.673, Recall:  0.617, Precision:  0.685,F1 Score:  0.649
+Validation Loss:  0.566, Acc:  0.773, Recall:  0.776, Precision:  0.739,F1 Score:  0.757
+Validation loss decreased (inf --&gt; 0.566105). Saving model ...
 </pre></div></div>
 </div>
-<div class="nboutput docutils container">
+<div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Epochs 2/2 : Training: 100%|██████████| 750/750 [02:45&lt;00:00,  4.53it/s]
-Validation: 100%|██████████| 33/33 [00:08&lt;00:00,  3.89it/s]
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Epoch 2/2
-Train Loss:  0.580, Acc:  0.762, Recall:  0.735, Precision:  0.776,F1 Score:  0.755
-Validation Loss:  0.523, Acc:  0.814, Recall:  0.768, Precision:  0.815,F1 Score:  0.791
-Validation loss decreased (0.612706 --&gt; 0.523449). Saving model ...
-</pre></div></div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-{&#39;loss&#39;: [0.6904053688049316, 0.5798982381820679],
- &#39;acc&#39;: [0.6741666793823242, 0.762499988079071],
- &#39;val_loss&#39;: [0.6127063035964966, 0.523449182510376],
- &#39;val_acc&#39;: [0.7424242496490479, 0.814393937587738],
- &#39;optimizer&#39;: &#39;Adam (\nParameter Group 0\n    amsgrad: False\n    betas: (0.9, 0.999)\n    capturable: False\n    differentiable: False\n    eps: 1e-08\n    foreach: None\n    fused: False\n    lr: 0.0001\n    maximize: False\n    weight_decay: 0\n)&#39;,
- &#39;loss_func&#39;: &#39;None&#39;,
- &#39;epochs&#39;: 2,
- &#39;patience&#39;: 2}
+Epochs 2/2 : Training:   7%|▋         | 56/750 [00:14&lt;02:29,  4.65it/s]
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">

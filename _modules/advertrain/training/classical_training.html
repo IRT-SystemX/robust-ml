@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>advertrain.training.classical_training &mdash; Robustness Platform 0.1.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=a58bc63e"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Robustness Platform
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../guidelines.html">💡 Guideline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../architecture.html">🎡 Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">🔄 Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">🔎 Package robust-ml</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Robustness Platform</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">advertrain.training.classical_training</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for advertrain.training.classical_training</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="kn">import</span> <span class="n">Module</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch.optim</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optimizer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch.utils.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataLoader</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">robustML.advertrain.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Metrics</span>
+
+
+<div class="viewcode-block" id="ClassicalTraining">
+<a class="viewcode-back" href="../../../advertrain.training.html#advertrain.training.classical_training.ClassicalTraining">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ClassicalTraining</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class representing the classical training process for a PyTorch model.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        model (Module): The PyTorch model to be trained.</span>
+<span class="sd">        optimizer (Optimizer): The optimizer used for training.</span>
+<span class="sd">        loss_func: The loss function used for training.</span>
+<span class="sd">        device (torch.device): The device on which to train the model.</span>
+<span class="sd">        metrics (Metrics): An instance of Metrics to track training performance.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">Module</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">:</span> <span class="n">Optimizer</span><span class="p">,</span> <span class="n">loss_func</span><span class="p">,</span> <span class="n">device</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">loss_func</span> <span class="o">=</span> <span class="n">loss_func</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">device</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">optimizer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span> <span class="o">=</span> <span class="n">Metrics</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">reset_metrics</span><span class="p">()</span>
+
+<div class="viewcode-block" id="ClassicalTraining.preprocess_batch">
+<a class="viewcode-back" href="../../../advertrain.training.html#advertrain.training.classical_training.ClassicalTraining.preprocess_batch">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">preprocess_batch</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">epoch</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Preprocess a batch of data and labels before training or validation.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            x (torch.Tensor): Input data batch.</span>
+<span class="sd">            y (torch.Tensor): Corresponding labels batch.</span>
+<span class="sd">            epoch (int): The current epoch number.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Tuple[torch.Tensor, torch.Tensor]: The preprocessed data and labels.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span></div>
+
+
+<div class="viewcode-block" id="ClassicalTraining.train_batch">
+<a class="viewcode-back" href="../../../advertrain.training.html#advertrain.training.classical_training.ClassicalTraining.train_batch">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">train_batch</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">epoch</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Process and train a single batch of data.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            x (torch.Tensor): Input data batch.</span>
+<span class="sd">            y (torch.Tensor): Corresponding labels batch.</span>
+<span class="sd">            epoch (int): The current epoch number.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Tuple[float, int]: The training loss for the batch and the batch size.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_device</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="n">x</span><span class="o">.</span><span class="n">clamp_</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loss_func</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+        <span class="n">pred</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">pred</span><span class="p">,</span> <span class="n">loss</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ClassicalTraining.val_batch">
+<a class="viewcode-back" href="../../../advertrain.training.html#advertrain.training.classical_training.ClassicalTraining.val_batch">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">val_batch</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">epoch</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate a single batch of data.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            x (torch.Tensor): Input data batch.</span>
+<span class="sd">            y (torch.Tensor): Corresponding labels batch.</span>
+<span class="sd">            epoch (int): The current epoch number.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Tuple[float, int]: The validation loss for the batch and the batch size.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_device</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loss_func</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+        <span class="n">pred</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">pred</span><span class="p">,</span> <span class="n">loss</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ClassicalTraining.fit">
+<a class="viewcode-back" href="../../../advertrain.training.html#advertrain.training.classical_training.ClassicalTraining.fit">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">epochs</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">train_dataloader</span><span class="p">:</span> <span class="n">DataLoader</span><span class="p">,</span>
+        <span class="n">val_dataloader</span><span class="p">:</span> <span class="n">DataLoader</span><span class="p">,</span>
+        <span class="n">patience</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">checkpoint</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Train and validate the model over a given number of epochs, implementing early stopping.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            epochs (int): The total number of epochs to train.</span>
+<span class="sd">            train_dataloader (DataLoader): The DataLoader for the training data.</span>
+<span class="sd">            val_dataloader (DataLoader): The DataLoader for the validation data.</span>
+<span class="sd">            patience (int): The number of epochs to wait for improvement before stopping early.</span>
+<span class="sd">            checkpoint (str): Path to save the model checkpoints.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Dict[str, Any]: A dictionary containing training and validation metrics.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">wait</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">val_loss_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">Inf</span>
+
+        <span class="n">metrics</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;loss&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;acc&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;val_loss&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;val_acc&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;optimizer&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="p">),</span>
+            <span class="s2">&quot;loss_func&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">loss_func</span><span class="p">),</span>
+            <span class="s2">&quot;epochs&quot;</span><span class="p">:</span> <span class="n">epochs</span><span class="p">,</span> <span class="s2">&quot;patience&quot;</span><span class="p">:</span> <span class="n">patience</span>
+        <span class="p">}</span>
+
+        <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+            <span class="p">(</span>
+                <span class="n">train_acc</span><span class="p">,</span>
+                <span class="n">train_loss</span><span class="p">,</span>
+                <span class="n">train_precision_defect</span><span class="p">,</span>
+                <span class="n">train_recall_defect</span><span class="p">,</span>
+                <span class="n">train_f1_score_defect</span><span class="p">,</span>
+            <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_epoch</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="p">(</span>
+                <span class="n">val_acc</span><span class="p">,</span>
+                <span class="n">val_loss</span><span class="p">,</span>
+                <span class="n">val_precision_defect</span><span class="p">,</span>
+                <span class="n">val_recall_defect</span><span class="p">,</span>
+                <span class="n">val_f1_score_defect</span><span class="p">,</span>
+            <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_epoch</span><span class="p">(</span><span class="n">val_dataloader</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+            <span class="c1"># update metrics</span>
+            <span class="n">metrics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_metrics</span><span class="p">(</span><span class="n">metrics</span><span class="p">,</span> <span class="n">train_loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">train_acc</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">val_loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">val_acc</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">epochs</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                  <span class="sa">f</span><span class="s2">&quot;Train Loss: </span><span class="si">{</span><span class="n">train_loss</span><span class="w"> </span><span class="si">:</span><span class="s2"> .3f</span><span class="si">}</span><span class="s2">, Acc: </span><span class="si">{</span><span class="n">train_acc</span><span class="w"> </span><span class="si">:</span><span class="s2"> .3f</span><span class="si">}</span><span class="s2">, Recall: </span><span class="si">{</span><span class="n">train_recall_defect</span><span class="w"> </span><span class="si">:</span><span class="s2"> 1.3f</span><span class="si">}</span><span class="s2">, Precision: </span><span class="si">{</span><span class="n">train_precision_defect</span><span class="w"> </span><span class="si">:</span><span class="s2"> 1.3f</span><span class="si">}</span><span class="s2">,F1 Score: </span><span class="si">{</span><span class="n">train_f1_score_defect</span><span class="w"> </span><span class="si">:</span><span class="s2"> .3f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                  <span class="sa">f</span><span class="s2">&quot;Validation Loss: </span><span class="si">{</span><span class="n">val_loss</span><span class="w"> </span><span class="si">:</span><span class="s2"> .3f</span><span class="si">}</span><span class="s2">, Acc: </span><span class="si">{</span><span class="n">val_acc</span><span class="w"> </span><span class="si">:</span><span class="s2"> .3f</span><span class="si">}</span><span class="s2">, Recall: </span><span class="si">{</span><span class="n">val_recall_defect</span><span class="w"> </span><span class="si">:</span><span class="s2"> 1.3f</span><span class="si">}</span><span class="s2">, Precision: </span><span class="si">{</span><span class="n">val_precision_defect</span><span class="w"> </span><span class="si">:</span><span class="s2"> 1.3f</span><span class="si">}</span><span class="s2">,F1 Score: </span><span class="si">{</span><span class="n">val_f1_score_defect</span><span class="w"> </span><span class="si">:</span><span class="s2"> .3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Checkpoint</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">save_metrics</span><span class="p">(</span><span class="n">metrics</span><span class="p">,</span> <span class="n">checkpoint</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">val_loss</span> <span class="o">&lt;</span> <span class="n">val_loss_min</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Validation loss decreased (</span><span class="si">{</span><span class="n">val_loss_min</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> --&gt; </span><span class="si">{</span><span class="n">val_loss</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">). Saving model ...&quot;</span><span class="p">)</span>
+                <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span> <span class="s2">&quot;model.pth&quot;</span><span class="p">))</span>
+                <span class="n">val_loss_min</span> <span class="o">=</span> <span class="n">val_loss</span>
+                <span class="n">wait</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="c1"># Early stopping</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">wait</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">wait</span> <span class="o">&gt;</span> <span class="n">patience</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Terminated training for early stopping at epoch </span><span class="si">{</span><span class="n">epoch</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
+                    <span class="k">break</span>
+
+        <span class="k">return</span> <span class="n">metrics</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_to_device</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Moves tensors to the specified device.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">),</span> <span class="n">y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_process_epoch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataloader</span><span class="p">:</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">epochs</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">epoch</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">train</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Process a single epoch of training or validation.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            dataloader (DataLoader): The DataLoader for the epoch.</span>
+<span class="sd">            epoch (int): The current epoch number.</span>
+<span class="sd">            train (bool): Flag indicating whether it&#39;s a training epoch.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Dict[str, float]: Metrics for the processed epoch.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">reset_metrics</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">train</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
+                <span class="n">dataloader</span><span class="p">,</span>
+                <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Epochs </span><span class="si">{</span><span class="n">epoch</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">epochs</span><span class="si">}</span><span class="s2"> : Training&quot;</span><span class="p">,</span>
+                <span class="n">position</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="n">leave</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">train_batch</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">epoch</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
+                <span class="n">dataloader</span><span class="p">,</span>
+                <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Validation&quot;</span><span class="p">,</span>
+                <span class="n">position</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="n">leave</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">val_batch</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">epoch</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">get_metrics</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_update_metrics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">metrics</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">train_loss</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">train_acc</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">val_loss</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">val_acc</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the overall metrics dictionary with the metrics from the current epoch.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            metrics (Dict[str, Any]): The overall metrics dictionary.</span>
+<span class="sd">            train_metrics (Dict[str, float]): Metrics from the training phase.</span>
+<span class="sd">            val_metrics (Dict[str, float]): Metrics from the validation phase.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_loss</span><span class="p">)</span>
+        <span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_acc</span><span class="p">)</span>
+        <span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val_loss</span><span class="p">)</span>
+        <span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;val_acc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val_acc</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">metrics</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, IRT SystemX.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

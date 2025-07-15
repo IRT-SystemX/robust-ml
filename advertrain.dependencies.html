@@ -56,11 +56,11 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="advertrain.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="advertrain.html#advertrain-constants-module">advertrain.constants module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="advertrain.html#advertrain-metrics-module">advertrain.metrics module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="advertrain.html#advertrain-models-module">advertrain.models module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="advertrain.html#advertrain-transforms-module">advertrain.transforms module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="advertrain.html#module-contents">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advertrain.html#module-advertrain.constants">advertrain.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advertrain.html#module-advertrain.metrics">advertrain.metrics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advertrain.html#module-advertrain.models">advertrain.models module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advertrain.html#module-advertrain.transforms">advertrain.transforms module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advertrain.html#module-advertrain">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -101,10 +101,20 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="advertrain.dependencies.cleverhans.html">advertrain.dependencies.cleverhans package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="advertrain.dependencies.cleverhans.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advertrain.dependencies.cleverhans.html#advertrain-dependencies-cleverhans-fast-gradient-method-module">advertrain.dependencies.cleverhans.fast_gradient_method module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advertrain.dependencies.cleverhans.html#advertrain-dependencies-cleverhans-projected-gradient-descent-module">advertrain.dependencies.cleverhans.projected_gradient_descent module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advertrain.dependencies.cleverhans.html#advertrain-dependencies-cleverhans-utils-module">advertrain.dependencies.cleverhans.utils module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advertrain.dependencies.cleverhans.html#module-contents">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advertrain.dependencies.cleverhans.html#module-advertrain.dependencies.cleverhans.fast_gradient_method">advertrain.dependencies.cleverhans.fast_gradient_method module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="advertrain.dependencies.cleverhans.html#advertrain.dependencies.cleverhans.fast_gradient_method.fast_gradient_method"><code class="docutils literal notranslate"><span class="pre">fast_gradient_method()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="advertrain.dependencies.cleverhans.html#module-advertrain.dependencies.cleverhans.projected_gradient_descent">advertrain.dependencies.cleverhans.projected_gradient_descent module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="advertrain.dependencies.cleverhans.html#advertrain.dependencies.cleverhans.projected_gradient_descent.projected_gradient_descent"><code class="docutils literal notranslate"><span class="pre">projected_gradient_descent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="advertrain.dependencies.cleverhans.html#module-advertrain.dependencies.cleverhans.utils">advertrain.dependencies.cleverhans.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="advertrain.dependencies.cleverhans.html#advertrain.dependencies.cleverhans.utils.clip_eta"><code class="docutils literal notranslate"><span class="pre">clip_eta()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="advertrain.dependencies.cleverhans.html#advertrain.dependencies.cleverhans.utils.optimize_linear"><code class="docutils literal notranslate"><span class="pre">optimize_linear()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="advertrain.dependencies.cleverhans.html#module-advertrain.dependencies.cleverhans">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -113,20 +123,675 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
-<section id="advertrain-dependencies-autoattack-module">
-<h2>advertrain.dependencies.autoattack module<a class="headerlink" href="#advertrain-dependencies-autoattack-module" title="Link to this heading"></a></h2>
+<section id="module-advertrain.dependencies.autoattack">
+<span id="advertrain-dependencies-autoattack-module"></span><h2>advertrain.dependencies.autoattack module<a class="headerlink" href="#module-advertrain.dependencies.autoattack" title="Link to this heading"></a></h2>
+<p>Taken from <a class="reference external" href="https://github.com/fra31/auto-attack">https://github.com/fra31/auto-attack</a></p>
+<p>MIT License</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">advertrain.dependencies.autoattack.</span></span><span class="sig-name descname"><span class="pre">APGDAttack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Linf'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_restarts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'ce'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eot_iter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.75</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topk</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">device</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_largereps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_tf_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Implements the Auto-PGD (Auto Projected Gradient Descent) attack method.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.model" title="Link to this definition"></a></dt>
+<dd><p>A function representing the forward pass of the model to be attacked.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Callable</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.n_iter">
+<span class="sig-name descname"><span class="pre">n_iter</span></span><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.n_iter" title="Link to this definition"></a></dt>
+<dd><p>Number of iterations for the attack.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.norm">
+<span class="sig-name descname"><span class="pre">norm</span></span><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.norm" title="Link to this definition"></a></dt>
+<dd><p>The type of norm for the attack (‘Linf’, ‘L2’, ‘L1’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.n_restarts">
+<span class="sig-name descname"><span class="pre">n_restarts</span></span><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.n_restarts" title="Link to this definition"></a></dt>
+<dd><p>Number of random restarts for the attack.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.eps">
+<span class="sig-name descname"><span class="pre">eps</span></span><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.eps" title="Link to this definition"></a></dt>
+<dd><p>The maximum perturbation amount allowed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.seed">
+<span class="sig-name descname"><span class="pre">seed</span></span><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.seed" title="Link to this definition"></a></dt>
+<dd><p>Random seed for reproducibility.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.loss">
+<span class="sig-name descname"><span class="pre">loss</span></span><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.loss" title="Link to this definition"></a></dt>
+<dd><p>Type of loss function to use (‘ce’ for cross-entropy, ‘dlr’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.eot_iter">
+<span class="sig-name descname"><span class="pre">eot_iter</span></span><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.eot_iter" title="Link to this definition"></a></dt>
+<dd><p>Number of iterations for Expectation over Transformation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.rho">
+<span class="sig-name descname"><span class="pre">rho</span></span><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.rho" title="Link to this definition"></a></dt>
+<dd><p>Parameter for adjusting step size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.topk">
+<span class="sig-name descname"><span class="pre">topk</span></span><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.topk" title="Link to this definition"></a></dt>
+<dd><p>Parameter for controlling the sparsity of the attack.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.verbose">
+<span class="sig-name descname"><span class="pre">verbose</span></span><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.verbose" title="Link to this definition"></a></dt>
+<dd><p>If True, prints verbose output during the attack.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.device">
+<span class="sig-name descname"><span class="pre">device</span></span><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.device" title="Link to this definition"></a></dt>
+<dd><p>The device on which to perform computations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[torch.device]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.use_largereps">
+<span class="sig-name descname"><span class="pre">use_largereps</span></span><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.use_largereps" title="Link to this definition"></a></dt>
+<dd><p>If True, uses larger epsilon values in initial iterations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.is_tf_model">
+<span class="sig-name descname"><span class="pre">is_tf_model</span></span><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.is_tf_model" title="Link to this definition"></a></dt>
+<dd><p>If True, indicates the model is a TensorFlow model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.init_hyperparam">
+<span class="sig-name descname"><span class="pre">init_hyperparam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack.init_hyperparam"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.init_hyperparam" title="Link to this definition"></a></dt>
+<dd><p>Initializes hyperparameters based on the input data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.check_oscillation">
+<span class="sig-name descname"><span class="pre">check_oscillation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack.check_oscillation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.check_oscillation" title="Link to this definition"></a></dt>
+<dd><p>Checks for oscillation in the optimization process.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.check_shape">
+<span class="sig-name descname"><span class="pre">check_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack.check_shape"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.check_shape" title="Link to this definition"></a></dt>
+<dd><p>Ensures the input has the expected shape.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.normalize">
+<span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack.normalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.normalize" title="Link to this definition"></a></dt>
+<dd><p>Normalizes the input tensor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.lp_norm">
+<span class="sig-name descname"><span class="pre">lp_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack.lp_norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.lp_norm" title="Link to this definition"></a></dt>
+<dd><p>Computes the Lp norm of the input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.dlr_loss">
+<span class="sig-name descname"><span class="pre">dlr_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack.dlr_loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.dlr_loss" title="Link to this definition"></a></dt>
+<dd><p>Computes the Deep Learning Robustness (DLR) loss.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.attack_single_run">
+<span class="sig-name descname"><span class="pre">attack_single_run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack.attack_single_run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.attack_single_run" title="Link to this definition"></a></dt>
+<dd><p>Performs a single run of the attack.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.perturb">
+<span class="sig-name descname"><span class="pre">perturb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">best_loss</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack.perturb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.perturb" title="Link to this definition"></a></dt>
+<dd><p>Generates adversarial examples for the given inputs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.APGDAttack.decr_eps_pgd">
+<span class="sig-name descname"><span class="pre">decr_eps_pgd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_rs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack.decr_eps_pgd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.autoattack.APGDAttack.decr_eps_pgd" title="Link to this definition"></a></dt>
+<dd><p>Performs PGD with decreasing epsilon values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">attack_single_run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_init</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack.attack_single_run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>Performs a single run of the attack.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>torch.Tensor</em>) – The input data (clean images).</p></li>
+<li><p><strong>y</strong> (<em>torch.Tensor</em>) – The target labels.</p></li>
+<li><p><strong>x_init</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Initial starting point for the attack.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the best perturbed inputs,
+the accuracy tensor, the loss tensor, and the best adversarial examples found.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">check_oscillation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y5</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.75</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack.check_oscillation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd><p>Checks for oscillation in the optimization process to adjust step sizes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>torch.Tensor</em>) – The input tensor.</p></li>
+<li><p><strong>j</strong> (<em>int</em>) – Current iteration index.</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – The number of steps to look back for oscillation.</p></li>
+<li><p><strong>y5</strong> (<em>torch.Tensor</em>) – The tensor of losses.</p></li>
+<li><p><strong>k3</strong> (<em>float</em><em>, </em><em>optional</em>) – Threshold parameter for oscillation. Defaults to 0.75.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tensor indicating if oscillation is detected.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">check_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack.check_shape"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dd><p>Ensures the input tensor has the correct shape.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>torch.Tensor</em>) – The input tensor.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The reshaped tensor.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">decr_eps_pgd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_rs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack.decr_eps_pgd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd><p>Performs PGD with decreasing epsilon values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>torch.Tensor</em>) – The input data.</p></li>
+<li><p><strong>y</strong> (<em>torch.Tensor</em>) – The target labels.</p></li>
+<li><p><strong>epss</strong> (<em>list</em>) – List of epsilon values to use in the attack.</p></li>
+<li><p><strong>iters</strong> (<em>list</em>) – List of iteration counts corresponding to each epsilon value.</p></li>
+<li><p><strong>use_rs</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, uses random start. Defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the final perturbed inputs,
+the accuracy tensor, the loss tensor, and the best adversarial examples found.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">dlr_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack.dlr_loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dd><p>Computes the Deep Learning Robustness (DLR) loss.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>torch.Tensor</em>) – The logits from the model.</p></li>
+<li><p><strong>y</strong> (<em>torch.Tensor</em>) – The target labels.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The computed DLR loss.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">init_hyperparam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack.init_hyperparam"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id5" title="Link to this definition"></a></dt>
+<dd><p>Initializes various hyperparameters based on the input data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>torch.Tensor</em>) – The input data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-name descname"><span class="pre">lp_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack.lp_norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id6" title="Link to this definition"></a></dt>
+<dd><p>Computes the Lp norm of the input tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>torch.Tensor</em>) – The input tensor.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The computed Lp norm of the input tensor.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id7">
+<span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack.normalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id7" title="Link to this definition"></a></dt>
+<dd><p>Normalizes the input tensor based on the specified norm type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>torch.Tensor</em>) – The input tensor to be normalized.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The normalized tensor.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-name descname"><span class="pre">perturb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">best_loss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_init</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#APGDAttack.perturb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id8" title="Link to this definition"></a></dt>
+<dd><p>Generates adversarial examples for the given inputs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>torch.Tensor</em>) – Clean images.</p></li>
+<li><p><strong>y</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Clean labels. If None, predicted labels are used.</p></li>
+<li><p><strong>best_loss</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, returns points with highest loss. Defaults to False.</p></li>
+<li><p><strong>x_init</strong> (<em>Optional</em><em>[</em><em>torch.Tensor</em><em>]</em>) – Initial starting point for the attack.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Adversarial examples.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.L0_norm">
+<span class="sig-prename descclassname"><span class="pre">advertrain.dependencies.autoattack.</span></span><span class="sig-name descname"><span class="pre">L0_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#L0_norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.autoattack.L0_norm" title="Link to this definition"></a></dt>
+<dd><p>Calculate the L0 norm of a tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>torch.Tensor</em>) – Input tensor.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The L0 norm of the input tensor.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.L1_norm">
+<span class="sig-prename descclassname"><span class="pre">advertrain.dependencies.autoattack.</span></span><span class="sig-name descname"><span class="pre">L1_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keepdim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#L1_norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.autoattack.L1_norm" title="Link to this definition"></a></dt>
+<dd><p>Calculate the L1 norm of a tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>torch.Tensor</em>) – Input tensor.</p></li>
+<li><p><strong>keepdim</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to keep the dimensions or not. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The L1 norm of the input tensor.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.L1_projection">
+<span class="sig-prename descclassname"><span class="pre">advertrain.dependencies.autoattack.</span></span><span class="sig-name descname"><span class="pre">L1_projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#L1_projection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.autoattack.L1_projection" title="Link to this definition"></a></dt>
+<dd><p>Project a point onto an L1 ball.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x2</strong> (<em>torch.Tensor</em>) – Center of the L1 ball (bs x input_dim).</p></li>
+<li><p><strong>y2</strong> (<em>torch.Tensor</em>) – Current perturbation (x2 + y2 is the point to be projected).</p></li>
+<li><p><strong>eps1</strong> (<em>float</em>) – Radius of the L1 ball.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Delta such that ||y2 + delta||_1 &lt;= eps1 and 0 &lt;= x2 + y2 + delta &lt;= 1.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="advertrain.dependencies.autoattack.L2_norm">
+<span class="sig-prename descclassname"><span class="pre">advertrain.dependencies.autoattack.</span></span><span class="sig-name descname"><span class="pre">L2_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keepdim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/autoattack.html#L2_norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.autoattack.L2_norm" title="Link to this definition"></a></dt>
+<dd><p>Calculate the L2 norm of a tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>torch.Tensor</em>) – Input tensor.</p></li>
+<li><p><strong>keepdim</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to keep the dimensions or not. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The L2 norm of the input tensor.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
-<section id="advertrain-dependencies-dropblock-module">
-<h2>advertrain.dependencies.dropblock module<a class="headerlink" href="#advertrain-dependencies-dropblock-module" title="Link to this heading"></a></h2>
+<section id="module-advertrain.dependencies.dropblock">
+<span id="advertrain-dependencies-dropblock-module"></span><h2>advertrain.dependencies.dropblock module<a class="headerlink" href="#module-advertrain.dependencies.dropblock" title="Link to this heading"></a></h2>
+<p>Taken from <a class="reference external" href="https://github.com/rwightman/pytorch-image-models">https://github.com/rwightman/pytorch-image-models</a></p>
+<p>MIT License</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="advertrain.dependencies.dropblock.DropBlock2d">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">advertrain.dependencies.dropblock.</span></span><span class="sig-name descname"><span class="pre">DropBlock2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drop_prob</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_noise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batchwise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fast</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/advertrain/dependencies/dropblock.html#DropBlock2d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.dropblock.DropBlock2d" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>DropBlock. See <a class="reference external" href="https://arxiv.org/pdf/1810.12890.pdf">https://arxiv.org/pdf/1810.12890.pdf</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="advertrain.dependencies.dropblock.DropBlock2d.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/advertrain/dependencies/dropblock.html#DropBlock2d.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.dropblock.DropBlock2d.forward" title="Link to this definition"></a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="advertrain.dependencies.dropblock.drop_block_2d">
+<span class="sig-prename descclassname"><span class="pre">advertrain.dependencies.dropblock.</span></span><span class="sig-name descname"><span class="pre">drop_block_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_prob</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_noise</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batchwise</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/advertrain/dependencies/dropblock.html#drop_block_2d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.dropblock.drop_block_2d" title="Link to this definition"></a></dt>
+<dd><p>DropBlock. See <a class="reference external" href="https://arxiv.org/pdf/1810.12890.pdf">https://arxiv.org/pdf/1810.12890.pdf</a>
+DropBlock with an experimental gaussian noise option. This layer has been tested on a few training
+runs with success, but needs further validation and possibly optimization for lower runtime impact.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="advertrain.dependencies.dropblock.drop_block_fast_2d">
+<span class="sig-prename descclassname"><span class="pre">advertrain.dependencies.dropblock.</span></span><span class="sig-name descname"><span class="pre">drop_block_fast_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_prob</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_noise</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batchwise</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/advertrain/dependencies/dropblock.html#drop_block_fast_2d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.dropblock.drop_block_fast_2d" title="Link to this definition"></a></dt>
+<dd><p>DropBlock. See <a class="reference external" href="https://arxiv.org/pdf/1810.12890.pdf">https://arxiv.org/pdf/1810.12890.pdf</a>
+DropBlock with an experimental gaussian noise option. Simplied from above without concern for valid
+block mask at edges.</p>
+</dd></dl>
+
 </section>
-<section id="advertrain-dependencies-fire-module">
-<h2>advertrain.dependencies.fire module<a class="headerlink" href="#advertrain-dependencies-fire-module" title="Link to this heading"></a></h2>
+<section id="module-advertrain.dependencies.fire">
+<span id="advertrain-dependencies-fire-module"></span><h2>advertrain.dependencies.fire module<a class="headerlink" href="#module-advertrain.dependencies.fire" title="Link to this heading"></a></h2>
+<p>Taken from <a class="reference external" href="https://github.com/MarinePICOT/Adversarial-Robustness-via-Fisher-Rao-Regularization">https://github.com/MarinePICOT/Adversarial-Robustness-via-Fisher-Rao-Regularization</a></p>
+<p>Robust training losses. Based on code from
+<a class="reference external" href="https://github.com/MarinePICOT/Adversarial-Robustness-via-Fisher-Rao-Regularization/blob/main/src/losses.py">https://github.com/MarinePICOT/Adversarial-Robustness-via-Fisher-Rao-Regularization/blob/main/src/losses.py</a></p>
+<dl class="py function">
+<dt class="sig sig-object py" id="advertrain.dependencies.fire.entropy_loss">
+<span class="sig-prename descclassname"><span class="pre">advertrain.dependencies.fire.</span></span><span class="sig-name descname"><span class="pre">entropy_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unlabeled_logits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/fire.html#entropy_loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.fire.entropy_loss" title="Link to this definition"></a></dt>
+<dd><p>Calculate the entropy loss for a batch of unlabeled data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unlabeled_logits</strong> (<em>torch.Tensor</em>) – A tensor of logits from a model’s output.</p></li>
+<li><p><strong>of</strong> (<em>It should have a shape</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The mean entropy loss across the batch.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="advertrain.dependencies.fire.fire_loss">
+<span class="sig-prename descclassname"><span class="pre">advertrain.dependencies.fire.</span></span><span class="sig-name descname"><span class="pre">fire_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_natural</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.003</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturb_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">adversarial</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Linf'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entropy_weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pretrain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/fire.html#fire_loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.fire.fire_loss" title="Link to this definition"></a></dt>
+<dd><p>This function calculates the FIRE (Fast and Improved Robustness Estimation) loss,
+which is a combination of natural loss, robust loss, and entropy loss for unlabeled data.
+It is used for adversarial training and stability training of neural networks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>torch.nn.Module</em>) – The neural network model to be trained.</p></li>
+<li><p><strong>x_natural</strong> (<em>torch.Tensor</em>) – Input tensor of natural (non-adversarial) images.</p></li>
+<li><p><strong>y</strong> (<em>torch.Tensor</em>) – Tensor of labels. Unlabeled data should have label -1.</p></li>
+<li><p><strong>optimizer</strong> (<em>torch.optim.Optimizer</em>) – The optimizer used for training.</p></li>
+<li><p><strong>epoch</strong> (<em>int</em>) – Current training epoch.</p></li>
+<li><p><strong>device</strong> (<em>torch.device</em>) – The device on which to perform calculations.</p></li>
+<li><p><strong>step_size</strong> (<em>float</em>) – Step size for adversarial example generation.</p></li>
+<li><p><strong>epsilon</strong> (<em>float</em>) – Perturbation size for adversarial example generation.</p></li>
+<li><p><strong>perturb_steps</strong> (<em>int</em>) – Number of steps for adversarial example generation.</p></li>
+<li><p><strong>beta</strong> (<em>float</em>) – Weight for the robust loss in the overall loss calculation.</p></li>
+<li><p><strong>adversarial</strong> (<em>bool</em>) – Flag to enable/disable adversarial training.</p></li>
+<li><p><strong>distance</strong> (<em>str</em>) – Type of distance metric for adversarial example generation (“Linf” or “L2”).</p></li>
+<li><p><strong>entropy_weight</strong> (<em>float</em>) – Weight for the entropy loss in the overall loss calculation.</p></li>
+<li><p><strong>pretrain</strong> (<em>int</em>) – Number of pretraining epochs.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing
+the total loss, natural loss, robust loss, and entropy loss for unlabeled data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="advertrain.dependencies.fire.noise_loss">
+<span class="sig-prename descclassname"><span class="pre">advertrain.dependencies.fire.</span></span><span class="sig-name descname"><span class="pre">noise_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_natural</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clamp_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/fire.html#noise_loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.fire.noise_loss" title="Link to this definition"></a></dt>
+<dd><p>This function augments the input data with random noise and computes the loss
+based on the model’s predictions for the noisy data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>torch.nn.Module</em>) – The neural network model.</p></li>
+<li><p><strong>x_natural</strong> (<em>torch.Tensor</em>) – The original (clean) input data.</p></li>
+<li><p><strong>y</strong> (<em>torch.Tensor</em>) – The labels corresponding to the input data.</p></li>
+<li><p><strong>epsilon</strong> (<em>float</em><em>, </em><em>optional</em>) – The magnitude of the noise to be added to the input data.
+Defaults to 0.25.</p></li>
+<li><p><strong>clamp_x</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, the noisy data is clamped to the range [0.0, 1.0].
+Defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The computed loss based on the model’s predictions for the noisy data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
-<section id="advertrain-dependencies-trades-module">
-<h2>advertrain.dependencies.trades module<a class="headerlink" href="#advertrain-dependencies-trades-module" title="Link to this heading"></a></h2>
+<section id="module-advertrain.dependencies.trades">
+<span id="advertrain-dependencies-trades-module"></span><h2>advertrain.dependencies.trades module<a class="headerlink" href="#module-advertrain.dependencies.trades" title="Link to this heading"></a></h2>
+<p>Taken from <a class="reference external" href="https://github.com/yaodongyu/TRADES">https://github.com/yaodongyu/TRADES</a></p>
+<p>MIT License</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="advertrain.dependencies.trades.l2_norm">
+<span class="sig-prename descclassname"><span class="pre">advertrain.dependencies.trades.</span></span><span class="sig-name descname"><span class="pre">l2_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/trades.html#l2_norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.trades.l2_norm" title="Link to this definition"></a></dt>
+<dd><p>Compute the L2 norm of a tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>torch.Tensor</em>) – The input tensor.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The L2 norm of the input tensor.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="advertrain.dependencies.trades.squared_l2_norm">
+<span class="sig-prename descclassname"><span class="pre">advertrain.dependencies.trades.</span></span><span class="sig-name descname"><span class="pre">squared_l2_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/trades.html#squared_l2_norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.trades.squared_l2_norm" title="Link to this definition"></a></dt>
+<dd><p>Compute the squared L2 norm of a tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>torch.Tensor</em>) – The input tensor.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The squared L2 norm of the flattened input tensor.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="advertrain.dependencies.trades.trades_loss">
+<span class="sig-prename descclassname"><span class="pre">advertrain.dependencies.trades.</span></span><span class="sig-name descname"><span class="pre">trades_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_natural</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.003</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.031</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perturb_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'l_inf'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">device</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/advertrain/dependencies/trades.html#trades_loss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#advertrain.dependencies.trades.trades_loss" title="Link to this definition"></a></dt>
+<dd><p>Calculate the TRADES loss for training robust models.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>nn.Module</em>) – The neural network model.</p></li>
+<li><p><strong>x_natural</strong> (<em>torch.Tensor</em>) – Natural (clean) inputs.</p></li>
+<li><p><strong>y</strong> (<em>torch.Tensor</em>) – Target outputs.</p></li>
+<li><p><strong>optimizer</strong> (<em>torch.optim.Optimizer</em>) – Optimizer for the model.</p></li>
+<li><p><strong>step_size</strong> (<em>float</em><em>, </em><em>optional</em>) – Step size for perturbation. Defaults to 0.003.</p></li>
+<li><p><strong>epsilon</strong> (<em>float</em><em>, </em><em>optional</em>) – Perturbation limit. Defaults to 0.031.</p></li>
+<li><p><strong>perturb_steps</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of perturbation steps. Defaults to 10.</p></li>
+<li><p><strong>beta</strong> (<em>float</em><em>, </em><em>optional</em>) – Regularization parameter for TRADES. Defaults to 1.0.</p></li>
+<li><p><strong>distance</strong> (<em>str</em><em>, </em><em>optional</em>) – Norm for perturbation (‘l_inf’ or ‘l_2’). Defaults to ‘l_inf’.</p></li>
+<li><p><strong>device</strong> (<em>torch.device</em><em>, </em><em>optional</em>) – The device to use (e.g., ‘cuda’ or ‘cpu’).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The TRADES loss.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<section id="module-advertrain.dependencies">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-advertrain.dependencies" title="Link to this heading"></a></h2>
 </section>
 </section>
 
