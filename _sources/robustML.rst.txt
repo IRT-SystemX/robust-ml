@@ -1,0 +1,18 @@
+robustML package
+================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   robustML.advertrain
+
+Module contents
+---------------
+
+.. automodule:: robustML
+   :members:
+   :undoc-members:
+   :show-inheritance:

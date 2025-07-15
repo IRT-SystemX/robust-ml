@@ -1,0 +1,53 @@
+robustML.advertrain.training package
+====================================
+
+Submodules
+----------
+
+robustML.advertrain.training.adversarial\_training module
+---------------------------------------------------------
+
+.. automodule:: robustML.advertrain.training.adversarial_training
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robustML.advertrain.training.autoattack\_training module
+--------------------------------------------------------
+
+.. automodule:: robustML.advertrain.training.autoattack_training
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robustML.advertrain.training.classical\_training module
+-------------------------------------------------------
+
+.. automodule:: robustML.advertrain.training.classical_training
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robustML.advertrain.training.fire\_training module
+--------------------------------------------------
+
+.. automodule:: robustML.advertrain.training.fire_training
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+robustML.advertrain.training.trades\_training module
+----------------------------------------------------
+
+.. automodule:: robustML.advertrain.training.trades_training
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: robustML.advertrain.training
+   :members:
+   :undoc-members:
+   :show-inheritance:

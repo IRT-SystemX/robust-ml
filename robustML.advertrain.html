@@ -1,0 +1,701 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>robustML.advertrain package &mdash; Robustness Platform 0.1.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=a58bc63e"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Robustness Platform
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guidelines.html">💡 Guideline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">🎡 Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">🔄 Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">🔎 Package robust-ml</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Robustness Platform</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">robustML.advertrain package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/robustML.advertrain.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="robustml-advertrain-package">
+<h1>robustML.advertrain package<a class="headerlink" href="#robustml-advertrain-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="robustML.advertrain.dependencies.html">robustML.advertrain.dependencies package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="robustML.advertrain.dependencies.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.dependencies.cleverhans.html">robustML.advertrain.dependencies.cleverhans package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.cleverhans.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.cleverhans.html#module-robustML.advertrain.dependencies.cleverhans.fast_gradient_method">robustML.advertrain.dependencies.cleverhans.fast_gradient_method module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.cleverhans.html#module-robustML.advertrain.dependencies.cleverhans.projected_gradient_descent">robustML.advertrain.dependencies.cleverhans.projected_gradient_descent module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.cleverhans.html#module-robustML.advertrain.dependencies.cleverhans.utils">robustML.advertrain.dependencies.cleverhans.utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.cleverhans.html#module-robustML.advertrain.dependencies.cleverhans">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robustML.advertrain.dependencies.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robustML.advertrain.dependencies.html#module-robustML.advertrain.dependencies.autoattack">robustML.advertrain.dependencies.autoattack module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack"><code class="docutils literal notranslate"><span class="pre">APGDAttack</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.model"><code class="docutils literal notranslate"><span class="pre">APGDAttack.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.n_iter"><code class="docutils literal notranslate"><span class="pre">APGDAttack.n_iter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.norm"><code class="docutils literal notranslate"><span class="pre">APGDAttack.norm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.n_restarts"><code class="docutils literal notranslate"><span class="pre">APGDAttack.n_restarts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.eps"><code class="docutils literal notranslate"><span class="pre">APGDAttack.eps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.seed"><code class="docutils literal notranslate"><span class="pre">APGDAttack.seed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.loss"><code class="docutils literal notranslate"><span class="pre">APGDAttack.loss</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.eot_iter"><code class="docutils literal notranslate"><span class="pre">APGDAttack.eot_iter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.rho"><code class="docutils literal notranslate"><span class="pre">APGDAttack.rho</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.topk"><code class="docutils literal notranslate"><span class="pre">APGDAttack.topk</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.verbose"><code class="docutils literal notranslate"><span class="pre">APGDAttack.verbose</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.device"><code class="docutils literal notranslate"><span class="pre">APGDAttack.device</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.use_largereps"><code class="docutils literal notranslate"><span class="pre">APGDAttack.use_largereps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.is_tf_model"><code class="docutils literal notranslate"><span class="pre">APGDAttack.is_tf_model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.init_hyperparam"><code class="docutils literal notranslate"><span class="pre">APGDAttack.init_hyperparam()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.check_oscillation"><code class="docutils literal notranslate"><span class="pre">APGDAttack.check_oscillation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.check_shape"><code class="docutils literal notranslate"><span class="pre">APGDAttack.check_shape()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.normalize"><code class="docutils literal notranslate"><span class="pre">APGDAttack.normalize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.lp_norm"><code class="docutils literal notranslate"><span class="pre">APGDAttack.lp_norm()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.dlr_loss"><code class="docutils literal notranslate"><span class="pre">APGDAttack.dlr_loss()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.attack_single_run"><code class="docutils literal notranslate"><span class="pre">APGDAttack.attack_single_run()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.perturb"><code class="docutils literal notranslate"><span class="pre">APGDAttack.perturb()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.APGDAttack.decr_eps_pgd"><code class="docutils literal notranslate"><span class="pre">APGDAttack.decr_eps_pgd()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#id0"><code class="docutils literal notranslate"><span class="pre">APGDAttack.attack_single_run()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#id1"><code class="docutils literal notranslate"><span class="pre">APGDAttack.check_oscillation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#id2"><code class="docutils literal notranslate"><span class="pre">APGDAttack.check_shape()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#id3"><code class="docutils literal notranslate"><span class="pre">APGDAttack.decr_eps_pgd()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#id4"><code class="docutils literal notranslate"><span class="pre">APGDAttack.dlr_loss()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#id5"><code class="docutils literal notranslate"><span class="pre">APGDAttack.init_hyperparam()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#id6"><code class="docutils literal notranslate"><span class="pre">APGDAttack.lp_norm()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#id7"><code class="docutils literal notranslate"><span class="pre">APGDAttack.normalize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#id8"><code class="docutils literal notranslate"><span class="pre">APGDAttack.perturb()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.L0_norm"><code class="docutils literal notranslate"><span class="pre">L0_norm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.L1_norm"><code class="docutils literal notranslate"><span class="pre">L1_norm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.L1_projection"><code class="docutils literal notranslate"><span class="pre">L1_projection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.autoattack.L2_norm"><code class="docutils literal notranslate"><span class="pre">L2_norm()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robustML.advertrain.dependencies.html#module-robustML.advertrain.dependencies.dropblock">robustML.advertrain.dependencies.dropblock module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.dropblock.DropBlock2d"><code class="docutils literal notranslate"><span class="pre">DropBlock2d</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.dropblock.DropBlock2d.forward"><code class="docutils literal notranslate"><span class="pre">DropBlock2d.forward()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.dropblock.drop_block_2d"><code class="docutils literal notranslate"><span class="pre">drop_block_2d()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.dropblock.drop_block_fast_2d"><code class="docutils literal notranslate"><span class="pre">drop_block_fast_2d()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robustML.advertrain.dependencies.html#module-robustML.advertrain.dependencies.fire">robustML.advertrain.dependencies.fire module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.fire.entropy_loss"><code class="docutils literal notranslate"><span class="pre">entropy_loss()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.fire.fire_loss"><code class="docutils literal notranslate"><span class="pre">fire_loss()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.fire.noise_loss"><code class="docutils literal notranslate"><span class="pre">noise_loss()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robustML.advertrain.dependencies.html#module-robustML.advertrain.dependencies.trades">robustML.advertrain.dependencies.trades module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.trades.l2_norm"><code class="docutils literal notranslate"><span class="pre">l2_norm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.trades.squared_l2_norm"><code class="docutils literal notranslate"><span class="pre">squared_l2_norm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.trades.trades_loss"><code class="docutils literal notranslate"><span class="pre">trades_loss()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robustML.advertrain.dependencies.html#module-robustML.advertrain.dependencies">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="robustML.advertrain.training.html">robustML.advertrain.training package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="robustML.advertrain.training.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robustML.advertrain.training.html#module-robustML.advertrain.training.adversarial_training">robustML.advertrain.training.adversarial_training module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.adversarial_training.AdversarialTraining"><code class="docutils literal notranslate"><span class="pre">AdversarialTraining</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.adversarial_training.AdversarialTraining.epsilon"><code class="docutils literal notranslate"><span class="pre">AdversarialTraining.epsilon</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.adversarial_training.AdversarialTraining.preprocess_batch"><code class="docutils literal notranslate"><span class="pre">AdversarialTraining.preprocess_batch()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robustML.advertrain.training.html#module-robustML.advertrain.training.autoattack_training">robustML.advertrain.training.autoattack_training module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.autoattack_training.AutoAttackTraining"><code class="docutils literal notranslate"><span class="pre">AutoAttackTraining</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.autoattack_training.AutoAttackTraining.epsilon"><code class="docutils literal notranslate"><span class="pre">AutoAttackTraining.epsilon</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.autoattack_training.AutoAttackTraining.apgd_loss"><code class="docutils literal notranslate"><span class="pre">AutoAttackTraining.apgd_loss</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.autoattack_training.AutoAttackTraining.apgd"><code class="docutils literal notranslate"><span class="pre">AutoAttackTraining.apgd</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.autoattack_training.AutoAttackTraining.preprocess_batch"><code class="docutils literal notranslate"><span class="pre">AutoAttackTraining.preprocess_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#id0"><code class="docutils literal notranslate"><span class="pre">AutoAttackTraining.preprocess_batch()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robustML.advertrain.training.html#module-robustML.advertrain.training.classical_training">robustML.advertrain.training.classical_training module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.classical_training.ClassicalTraining"><code class="docutils literal notranslate"><span class="pre">ClassicalTraining</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.classical_training.ClassicalTraining.model"><code class="docutils literal notranslate"><span class="pre">ClassicalTraining.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.classical_training.ClassicalTraining.optimizer"><code class="docutils literal notranslate"><span class="pre">ClassicalTraining.optimizer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.classical_training.ClassicalTraining.loss_func"><code class="docutils literal notranslate"><span class="pre">ClassicalTraining.loss_func</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.classical_training.ClassicalTraining.device"><code class="docutils literal notranslate"><span class="pre">ClassicalTraining.device</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.classical_training.ClassicalTraining.metrics"><code class="docutils literal notranslate"><span class="pre">ClassicalTraining.metrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.classical_training.ClassicalTraining.fit"><code class="docutils literal notranslate"><span class="pre">ClassicalTraining.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.classical_training.ClassicalTraining.preprocess_batch"><code class="docutils literal notranslate"><span class="pre">ClassicalTraining.preprocess_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.classical_training.ClassicalTraining.train_batch"><code class="docutils literal notranslate"><span class="pre">ClassicalTraining.train_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.classical_training.ClassicalTraining.val_batch"><code class="docutils literal notranslate"><span class="pre">ClassicalTraining.val_batch()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robustML.advertrain.training.html#module-robustML.advertrain.training.fire_training">robustML.advertrain.training.fire_training module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.fire_training.FIRETraining"><code class="docutils literal notranslate"><span class="pre">FIRETraining</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.fire_training.FIRETraining.train_batch"><code class="docutils literal notranslate"><span class="pre">FIRETraining.train_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.fire_training.FIRETraining.val_batch"><code class="docutils literal notranslate"><span class="pre">FIRETraining.val_batch()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robustML.advertrain.training.html#module-robustML.advertrain.training.trades_training">robustML.advertrain.training.trades_training module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.trades_training.TRADESTraining"><code class="docutils literal notranslate"><span class="pre">TRADESTraining</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.trades_training.TRADESTraining.train_batch"><code class="docutils literal notranslate"><span class="pre">TRADESTraining.train_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="robustML.advertrain.training.html#robustML.advertrain.training.trades_training.TRADESTraining.val_batch"><code class="docutils literal notranslate"><span class="pre">TRADESTraining.val_batch()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robustML.advertrain.training.html#module-robustML.advertrain.training">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-robustML.advertrain.constants">
+<span id="robustml-advertrain-constants-module"></span><h2>robustML.advertrain.constants module<a class="headerlink" href="#module-robustML.advertrain.constants" title="Link to this heading"></a></h2>
+</section>
+<section id="module-robustML.advertrain.metrics">
+<span id="robustml-advertrain-metrics-module"></span><h2>robustML.advertrain.metrics module<a class="headerlink" href="#module-robustML.advertrain.metrics" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robustML.advertrain.metrics.Metrics">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robustML.advertrain.metrics.</span></span><span class="sig-name descname"><span class="pre">Metrics</span></span><a class="reference internal" href="_modules/robustML/advertrain/metrics.html#Metrics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.metrics.Metrics" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to track performance metrics for binary classification tasks.</p>
+<p>This class tracks true positives, true negatives, false positives,
+false negatives, and cumulative loss across batches. It calculates metrics
+like accuracy, precision, recall, and F1-score.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robustML.advertrain.metrics.Metrics.display">
+<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/robustML/advertrain/metrics.html#Metrics.display"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.metrics.Metrics.display" title="Link to this definition"></a></dt>
+<dd><p>Display the calculated metrics with a title.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>title</strong> (<em>str</em>) – The title for the metrics display.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robustML.advertrain.metrics.Metrics.display_table">
+<span class="sig-name descname"><span class="pre">display_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/robustML/advertrain/metrics.html#Metrics.display_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.metrics.Metrics.display_table" title="Link to this definition"></a></dt>
+<dd><p>Display the metrics in a tabular format with a title.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>title</strong> (<em>str</em>) – The title for the table.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robustML.advertrain.metrics.Metrics.get_metrics">
+<span class="sig-name descname"><span class="pre">get_metrics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="_modules/robustML/advertrain/metrics.html#Metrics.get_metrics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.metrics.Metrics.get_metrics" title="Link to this definition"></a></dt>
+<dd><p>Calculate and return key performance metrics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple containing accuracy, loss, precision, recall, and F1-score.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robustML.advertrain.metrics.Metrics.load_metrics">
+<span class="sig-name descname"><span class="pre">load_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">checkpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/robustML/advertrain/metrics.html#Metrics.load_metrics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.metrics.Metrics.load_metrics" title="Link to this definition"></a></dt>
+<dd><p>Load metrics from a JSON file located at <cite>&lt;checkpoint&gt;/metrics.json</cite>.</p>
+<p>This function reads the ‘metrics.json’ file from the specified checkpoint directory
+and returns the contents as a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>checkpoint</strong> (<em>str</em>) – The directory path from where the metrics.json file will be loaded.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing the loaded metrics.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robustML.advertrain.metrics.Metrics.reset_metrics">
+<span class="sig-name descname"><span class="pre">reset_metrics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/robustML/advertrain/metrics.html#Metrics.reset_metrics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.metrics.Metrics.reset_metrics" title="Link to this definition"></a></dt>
+<dd><p>Reset all metrics to zero.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robustML.advertrain.metrics.Metrics.save_metrics">
+<span class="sig-name descname"><span class="pre">save_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">checkpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/robustML/advertrain/metrics.html#Metrics.save_metrics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.metrics.Metrics.save_metrics" title="Link to this definition"></a></dt>
+<dd><p>Save metrics in a JSON file located at <cite>&lt;checkpoint&gt;/metrics.json</cite>.</p>
+<p>This function serializes the provided metrics dictionary into JSON format and
+writes it to a file named ‘metrics.json’ in the specified checkpoint directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metrics</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – A dictionary containing metric names as keys and their corresponding values.</p></li>
+<li><p><strong>checkpoint</strong> (<em>str</em>) – The directory path where the metrics.json file will be saved.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robustML.advertrain.metrics.Metrics.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pred</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/robustML/advertrain/metrics.html#Metrics.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.metrics.Metrics.update" title="Link to this definition"></a></dt>
+<dd><p>Update metrics based on inputs, ground truth, model predictions, and loss.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>Tensor</em>) – Input tensor</p></li>
+<li><p><strong>y</strong> (<em>Tensor</em>) – target labels</p></li>
+<li><p><strong>pred</strong> (<em>Tensor</em>) – Model predictions</p></li>
+<li><p><strong>loss</strong> (<em>Tensor</em>) – Batch loss</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-robustML.advertrain.models">
+<span id="robustml-advertrain-models-module"></span><h2>robustML.advertrain.models module<a class="headerlink" href="#module-robustML.advertrain.models" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robustML.advertrain.models.ConvNet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robustML.advertrain.models.</span></span><span class="sig-name descname"><span class="pre">ConvNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/robustML/advertrain/models.html#ConvNet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.models.ConvNet" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Convolutional Neural Network with dropout layers, designed for processing images of size 64x128.</p>
+<p>This network includes a normalization layer, several convolutional layers with
+ReLU activation and max pooling, followed by fully connected layers with dropout
+for regularization. It is suited for tasks like image classification where dropout
+can help reduce overfitting.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robustML.advertrain.models.ConvNet.norm">
+<span class="sig-name descname"><span class="pre">norm</span></span><a class="headerlink" href="#robustML.advertrain.models.ConvNet.norm" title="Link to this definition"></a></dt>
+<dd><p>Normalization layer to preprocess the input images.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#robustML.advertrain.models.Normalize" title="robustML.advertrain.models.Normalize">Normalize</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">conv1,</span> <span class="pre">conv2_1,</span> <span class="pre">conv3_1,</span> <span class="pre">conv4_1</span></span></dt>
+<dd><p>Convolutional layers for feature extraction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nn.Conv2d</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robustML.advertrain.models.ConvNet.pooling">
+<span class="sig-name descname"><span class="pre">pooling</span></span><a class="headerlink" href="#robustML.advertrain.models.ConvNet.pooling" title="Link to this definition"></a></dt>
+<dd><p>Max pooling layer to reduce spatial dimensions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nn.MaxPool2d</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robustML.advertrain.models.ConvNet.activation">
+<span class="sig-name descname"><span class="pre">activation</span></span><a class="headerlink" href="#robustML.advertrain.models.ConvNet.activation" title="Link to this definition"></a></dt>
+<dd><p>Activation function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nn.ReLU</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robustML.advertrain.models.ConvNet.dropout">
+<span class="sig-name descname"><span class="pre">dropout</span></span><a class="headerlink" href="#robustML.advertrain.models.ConvNet.dropout" title="Link to this definition"></a></dt>
+<dd><p>Dropout layer for regularization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nn.Dropout</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">linear1,</span> <span class="pre">linear2,</span> <span class="pre">linear3</span></span></dt>
+<dd><p>Fully connected layers for classification.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nn.Linear</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robustML.advertrain.models.ConvNet.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/robustML/advertrain/models.html#ConvNet.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.models.ConvNet.forward" title="Link to this definition"></a></dt>
+<dd><p>Defines the forward pass of the ConvNetDropout.</p>
+<p>The input tensor is processed through normalization, convolutional layers,
+pooling layers, dropout layers, and fully connected layers sequentially to
+produce the output tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>Tensor</em>) – Input tensor of shape (batch_size, 3, 64, 128).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Output tensor after processing through the network.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robustML.advertrain.models.ConvNetDropblock">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robustML.advertrain.models.</span></span><span class="sig-name descname"><span class="pre">ConvNetDropblock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_prob</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/robustML/advertrain/models.html#ConvNetDropblock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.models.ConvNetDropblock" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Convolutional Neural Network with DropBlock regularization, designed for processing images of size 64x128.</p>
+<p>This network includes a normalization layer, several convolutional layers with
+ReLU activation and max pooling, followed by fully connected layers with dropout
+and DropBlock for regularization. It is suited for tasks like image classification
+where advanced regularization techniques can help reduce overfitting.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robustML.advertrain.models.ConvNetDropblock.norm">
+<span class="sig-name descname"><span class="pre">norm</span></span><a class="headerlink" href="#robustML.advertrain.models.ConvNetDropblock.norm" title="Link to this definition"></a></dt>
+<dd><p>Normalization layer to preprocess the input images.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#robustML.advertrain.models.Normalize" title="robustML.advertrain.models.Normalize">Normalize</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">conv1,</span> <span class="pre">conv2_1,</span> <span class="pre">conv3_1,</span> <span class="pre">conv4_1</span></span></dt>
+<dd><p>Convolutional layers for feature extraction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nn.Conv2d</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robustML.advertrain.models.ConvNetDropblock.pooling">
+<span class="sig-name descname"><span class="pre">pooling</span></span><a class="headerlink" href="#robustML.advertrain.models.ConvNetDropblock.pooling" title="Link to this definition"></a></dt>
+<dd><p>Max pooling layer to reduce spatial dimensions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nn.MaxPool2d</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robustML.advertrain.models.ConvNetDropblock.activation">
+<span class="sig-name descname"><span class="pre">activation</span></span><a class="headerlink" href="#robustML.advertrain.models.ConvNetDropblock.activation" title="Link to this definition"></a></dt>
+<dd><p>Activation function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nn.ReLU</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robustML.advertrain.models.ConvNetDropblock.dropout">
+<span class="sig-name descname"><span class="pre">dropout</span></span><a class="headerlink" href="#robustML.advertrain.models.ConvNetDropblock.dropout" title="Link to this definition"></a></dt>
+<dd><p>Dropout layer for regularization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nn.Dropout</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="robustML.advertrain.models.ConvNetDropblock.dropblock">
+<span class="sig-name descname"><span class="pre">dropblock</span></span><a class="headerlink" href="#robustML.advertrain.models.ConvNetDropblock.dropblock" title="Link to this definition"></a></dt>
+<dd><p>DropBlock layer for structured dropout.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="robustML.advertrain.dependencies.html#robustML.advertrain.dependencies.dropblock.DropBlock2d" title="robustML.advertrain.dependencies.dropblock.DropBlock2d">DropBlock2d</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">linear1,</span> <span class="pre">linear2,</span> <span class="pre">linear3</span></span></dt>
+<dd><p>Fully connected layers for classification.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nn.Linear</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robustML.advertrain.models.ConvNetDropblock.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/robustML/advertrain/models.html#ConvNetDropblock.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.models.ConvNetDropblock.forward" title="Link to this definition"></a></dt>
+<dd><p>Defines the forward pass of the ConvNetDropblock.</p>
+<p>The input tensor is processed through normalization, convolutional layers,
+pooling layers, DropBlock layers, dropout layers, and fully connected layers
+sequentially to produce the output tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>Tensor</em>) – Input tensor of shape.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Output tensor after processing through the network.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robustML.advertrain.models.Normalize">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robustML.advertrain.models.</span></span><span class="sig-name descname"><span class="pre">Normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mean</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/robustML/advertrain/models.html#Normalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.models.Normalize" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robustML.advertrain.models.Normalize.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/robustML/advertrain/models.html#Normalize.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.models.Normalize.forward" title="Link to this definition"></a></dt>
+<dd><p>Normalize the input tensor.</p>
+<p>Applies the normalization operation on the input tensor using the mean and
+standard deviation provided during initialization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>Tensor</em>) – The input tensor to be normalized.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The normalized tensor.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robustML.advertrain.models.ResNet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robustML.advertrain.models.</span></span><span class="sig-name descname"><span class="pre">ResNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/robustML/advertrain/models.html#ResNet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.models.ResNet" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>A custom implementation of a Residual Network (ResNet) for processing images.</p>
+<p>This network consists of multiple convolutional layers, each followed by batch normalization,
+and some layers include dropout for regularization. The network uses skip connections
+similar to a ResNet architecture, adding the output of one layer to another layer.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robustML.advertrain.models.ResNet.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/robustML/advertrain/models.html#ResNet.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.models.ResNet.forward" title="Link to this definition"></a></dt>
+<dd><p>Defines the forward pass of the ResNet.</p>
+<p>The input tensor is processed through a series of convolutional layers with skip connections,
+batch normalization, and dropout, followed by fully connected layers to produce the output tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inp</strong> (<em>Tensor</em>) – Input tensor of appropriate shape, typically matching the input size of the first</p></li>
+<li><p><strong>layer.</strong> (<em>convolutional</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Output tensor after processing through the network.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="robustML.advertrain.models.ResNetDropblock">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robustML.advertrain.models.</span></span><span class="sig-name descname"><span class="pre">ResNetDropblock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_prob</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/robustML/advertrain/models.html#ResNetDropblock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.models.ResNetDropblock" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>A custom implementation of a Residual Network (ResNet) for processing images.</p>
+<p>This network consists of multiple convolutional layers, each followed by batch normalization,
+and some layers include dropout for regularization. The network uses skip connections
+similar to a ResNet architecture, adding the output of one layer to another layer.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robustML.advertrain.models.ResNetDropblock.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/robustML/advertrain/models.html#ResNetDropblock.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.models.ResNetDropblock.forward" title="Link to this definition"></a></dt>
+<dd><p>Defines the forward pass of the ResNet.</p>
+<p>The input tensor is processed through a series of convolutional layers with skip connections,
+batch normalization, and dropout, followed by fully connected layers to produce the output tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inp</strong> (<em>Tensor</em>) – Input tensor of appropriate shape, typically matching the input size of the first</p></li>
+<li><p><strong>layer.</strong> (<em>convolutional</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Output tensor after processing through the network.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-robustML.advertrain.transforms">
+<span id="robustml-advertrain-transforms-module"></span><h2>robustML.advertrain.transforms module<a class="headerlink" href="#module-robustML.advertrain.transforms" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="robustML.advertrain.transforms.DataTransformations">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">robustML.advertrain.transforms.</span></span><span class="sig-name descname"><span class="pre">DataTransformations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_prob</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/robustML/advertrain/transforms.html#DataTransformations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.transforms.DataTransformations" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to create and return training and test data transformations.</p>
+<p>This class encapsulates the creation of data transformations used in training and testing.
+It provides methods to get composed series of transformations for both scenarios.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="robustML.advertrain.transforms.DataTransformations.get_test_transforms">
+<span class="sig-name descname"><span class="pre">get_test_transforms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Compose</span></span></span><a class="reference internal" href="_modules/robustML/advertrain/transforms.html#DataTransformations.get_test_transforms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.transforms.DataTransformations.get_test_transforms" title="Link to this definition"></a></dt>
+<dd><p>Creates and returns a series of test data transformations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A composed series of transformations for test data.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Compose</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="robustML.advertrain.transforms.DataTransformations.get_train_transforms">
+<span class="sig-name descname"><span class="pre">get_train_transforms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Compose</span></span></span><a class="reference internal" href="_modules/robustML/advertrain/transforms.html#DataTransformations.get_train_transforms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.transforms.DataTransformations.get_train_transforms" title="Link to this definition"></a></dt>
+<dd><p>Creates and returns a series of training data transformations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A composed series of transformations for training data.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Compose</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-robustML.advertrain">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robustML.advertrain" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, IRT SystemX.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

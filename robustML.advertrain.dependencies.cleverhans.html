@@ -1,0 +1,231 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>robustML.advertrain.dependencies.cleverhans package &mdash; Robustness Platform 0.1.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=a58bc63e"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Robustness Platform
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guidelines.html">💡 Guideline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">🎡 Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">🔄 Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">🔎 Package robust-ml</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Robustness Platform</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">robustML.advertrain.dependencies.cleverhans package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/robustML.advertrain.dependencies.cleverhans.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="robustml-advertrain-dependencies-cleverhans-package">
+<h1>robustML.advertrain.dependencies.cleverhans package<a class="headerlink" href="#robustml-advertrain-dependencies-cleverhans-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-robustML.advertrain.dependencies.cleverhans.fast_gradient_method">
+<span id="robustml-advertrain-dependencies-cleverhans-fast-gradient-method-module"></span><h2>robustML.advertrain.dependencies.cleverhans.fast_gradient_method module<a class="headerlink" href="#module-robustML.advertrain.dependencies.cleverhans.fast_gradient_method" title="Link to this heading"></a></h2>
+<p>Taken from <a class="reference external" href="https://github.com/rwightman/pytorch-image-models">https://github.com/rwightman/pytorch-image-models</a></p>
+<p>The Fast Gradient Method attack.</p>
+<p>MIT License</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="robustML.advertrain.dependencies.cleverhans.fast_gradient_method.fast_gradient_method">
+<span class="sig-prename descclassname"><span class="pre">robustML.advertrain.dependencies.cleverhans.fast_gradient_method.</span></span><span class="sig-name descname"><span class="pre">fast_gradient_method</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip_min</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip_max</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targeted</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sanity_checks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/robustML/advertrain/dependencies/cleverhans/fast_gradient_method.html#fast_gradient_method"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.dependencies.cleverhans.fast_gradient_method.fast_gradient_method" title="Link to this definition"></a></dt>
+<dd><p>PyTorch implementation of the Fast Gradient Method (FGM).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_fn</strong> – A callable that takes an input tensor and returns the model logits.</p></li>
+<li><p><strong>x</strong> (<em>torch.Tensor</em>) – Input tensor.</p></li>
+<li><p><strong>eps</strong> (<em>float</em>) – Epsilon, the input variation parameter.</p></li>
+<li><p><strong>norm</strong> (<em>int</em>) – Order of the norm (np.inf, 1, or 2).</p></li>
+<li><p><strong>clip_min</strong> (<em>float</em><em>, </em><em>optional</em>) – Mininum value per input dimension.</p></li>
+<li><p><strong>clip_max</strong> (<em>float</em><em>, </em><em>optional</em>) – Maximum value per input dimension.</p></li>
+<li><p><strong>y</strong> (<em>torch.Tensor</em><em>, </em><em>optional</em>) – Labels or target labels for targeted attack.</p></li>
+<li><p><strong>targeted</strong> (<em>bool</em>) – Whether to perform a targeted attack or not.</p></li>
+<li><p><strong>sanity_checks</strong> (<em>bool</em>) – If True, include sanity checks.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tensor containing the adversarial examples.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-robustML.advertrain.dependencies.cleverhans.projected_gradient_descent">
+<span id="robustml-advertrain-dependencies-cleverhans-projected-gradient-descent-module"></span><h2>robustML.advertrain.dependencies.cleverhans.projected_gradient_descent module<a class="headerlink" href="#module-robustML.advertrain.dependencies.cleverhans.projected_gradient_descent" title="Link to this heading"></a></h2>
+<p>Taken from <a class="reference external" href="https://github.com/rwightman/pytorch-image-models">https://github.com/rwightman/pytorch-image-models</a></p>
+<p>The Projected Gradient Descent attack.</p>
+<p>MIT License</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="robustML.advertrain.dependencies.cleverhans.projected_gradient_descent.projected_gradient_descent">
+<span class="sig-prename descclassname"><span class="pre">robustML.advertrain.dependencies.cleverhans.projected_gradient_descent.</span></span><span class="sig-name descname"><span class="pre">projected_gradient_descent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps_iter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_iter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip_min</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip_max</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targeted</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rand_init</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rand_minmax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sanity_checks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/robustML/advertrain/dependencies/cleverhans/projected_gradient_descent.html#projected_gradient_descent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.dependencies.cleverhans.projected_gradient_descent.projected_gradient_descent" title="Link to this definition"></a></dt>
+<dd><p>Performs the Projected Gradient Descent attack.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_fn</strong> – A callable that takes an input tensor and returns the model logits.</p></li>
+<li><p><strong>x</strong> (<em>torch.Tensor</em>) – Input tensor.</p></li>
+<li><p><strong>eps</strong> (<em>float</em>) – Epsilon, the input variation parameter.</p></li>
+<li><p><strong>eps_iter</strong> (<em>float</em>) – Step size for each attack iteration.</p></li>
+<li><p><strong>nb_iter</strong> (<em>int</em>) – Number of attack iterations.</p></li>
+<li><p><strong>norm</strong> (<em>int</em>) – Order of the norm (np.inf, 1, or 2).</p></li>
+<li><p><strong>clip_min</strong> (<em>float</em><em>, </em><em>optional</em>) – Mininum value per input dimension.</p></li>
+<li><p><strong>clip_max</strong> (<em>float</em><em>, </em><em>optional</em>) – Maximum value per input dimension.</p></li>
+<li><p><strong>y</strong> (<em>torch.Tensor</em><em>, </em><em>optional</em>) – Labels or target labels for targeted attack.</p></li>
+<li><p><strong>targeted</strong> (<em>bool</em>) – Whether to perform a targeted attack or not.</p></li>
+<li><p><strong>rand_init</strong> (<em>bool</em>) – Whether to start from a randomly perturbed input.</p></li>
+<li><p><strong>rand_minmax</strong> (<em>float</em><em>, </em><em>optional</em>) – Range of the uniform distribution for initial random perturbation.</p></li>
+<li><p><strong>sanity_checks</strong> (<em>bool</em>) – If True, include sanity checks.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tensor containing the adversarial examples.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-robustML.advertrain.dependencies.cleverhans.utils">
+<span id="robustml-advertrain-dependencies-cleverhans-utils-module"></span><h2>robustML.advertrain.dependencies.cleverhans.utils module<a class="headerlink" href="#module-robustML.advertrain.dependencies.cleverhans.utils" title="Link to this heading"></a></h2>
+<p>Taken from <a class="reference external" href="https://github.com/rwightman/pytorch-image-models">https://github.com/rwightman/pytorch-image-models</a></p>
+<p>MIT License</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="robustML.advertrain.dependencies.cleverhans.utils.clip_eta">
+<span class="sig-prename descclassname"><span class="pre">robustML.advertrain.dependencies.cleverhans.utils.</span></span><span class="sig-name descname"><span class="pre">clip_eta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/robustML/advertrain/dependencies/cleverhans/utils.html#clip_eta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.dependencies.cleverhans.utils.clip_eta" title="Link to this definition"></a></dt>
+<dd><p>Clips the perturbation eta to be within the specified norm ball.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eta</strong> (<em>torch.Tensor</em>) – The perturbation tensor.</p></li>
+<li><p><strong>norm</strong> (<em>int</em>) – The norm to use.</p></li>
+<li><p><strong>eps</strong> (<em>float</em>) – Epsilon, the maximum allowed norm of the perturbation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The clipped perturbation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="robustML.advertrain.dependencies.cleverhans.utils.optimize_linear">
+<span class="sig-prename descclassname"><span class="pre">robustML.advertrain.dependencies.cleverhans.utils.</span></span><span class="sig-name descname"><span class="pre">optimize_linear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grad</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">inf</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="_modules/robustML/advertrain/dependencies/cleverhans/utils.html#optimize_linear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#robustML.advertrain.dependencies.cleverhans.utils.optimize_linear" title="Link to this definition"></a></dt>
+<dd><p>Solves for the optimal input to a linear function under a norm constraint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grad</strong> (<em>torch.Tensor</em>) – Tensor of gradients.</p></li>
+<li><p><strong>eps</strong> (<em>float</em>) – Epsilon, the maximum allowed norm of the perturbation.</p></li>
+<li><p><strong>norm</strong> (<em>int</em>) – The norm to use.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The optimized perturbation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-robustML.advertrain.dependencies.cleverhans">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-robustML.advertrain.dependencies.cleverhans" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, IRT SystemX.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
