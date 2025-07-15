@@ -145,28 +145,15 @@ robustML/advertrain/dependencies/cleverhans/projected_gradient_descent.py:1:0: R
 robustML/advertrain/dependencies/cleverhans/projected_gradient_descent.py:1:0: R0801: Similar lines in 2 files
 ==robustML.advertrain.training.fire_training:[70:92]
 ==robustML.advertrain.training.trades_training:[105:114]
-        output = self.model(x)
-        pred = torch.argmax(output, dim=1)
+            output = self.model(x)
+            pred = torch.argmax(output, dim=1)
 
-        self.metrics.update(x, y, pred, loss)
+            self.metrics.update(x, y, pred, loss)
 
         return (
             loss.item(),
             len(x),
-        )
-
-    def val_batch(self, x: torch.Tensor, y: torch.Tensor, epoch: int) -> tuple[float, int]:
-        """
-        Validate the model for one batch of data.
-
-        Args:
-            x (torch.Tensor): The input data.
-            y (torch.Tensor): The labels corresponding to the input data.
-            epoch (int): The current epoch number.
-
-        Returns:
-            tuple[float, int]: A tuple containing the loss value and the batch size.
-        """ (duplicate-code)
+        ) (duplicate-code)
 robustML/advertrain/dependencies/cleverhans/projected_gradient_descent.py:1:0: R0801: Similar lines in 2 files
 ==robustML.advertrain.dependencies.fire:[110:116]
 ==robustML.advertrain.dependencies.trades:[87:93]
@@ -186,20 +173,19 @@ robustML/advertrain/dependencies/cleverhans/projected_gradient_descent.py:1:0: R
 
     def val_batch(self, x: torch.Tensor, y: torch.Tensor, epoch: int) -> tuple[float, int]:
         """
-        Validate the model for one batch of data.
+        Validate the model on a batch of data.
 
         Args:
-            x (torch.Tensor): The input data.
-            y (torch.Tensor): The labels corresponding to the input data.
-            epoch (int): The current epoch number.
+            x (torch.Tensor): Input data.
+            y (torch.Tensor): Target labels.
 
         Returns:
-            tuple[float, int]: A tuple containing the loss value and the batch size.
+            tuple[float, int]: Tuple containing the loss and the number of examples in the batch.
         """
         x, y = x.to(self.device), y.to(self.device)
 
         with torch.no_grad(): (duplicate-code)
 
------------------------------------
-Your code has been rated at 8.91/10
+------------------------------------------------------------------
+Your code has been rated at 8.91/10 (previous run: 8.91/10, +0.00)
 

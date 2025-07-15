@@ -666,7 +666,7 @@
                     <td>0</td>
                     <td>refactor</td>
                     <td></td>
-                    <td>Similar lines in 2 files<br />==robustML.advertrain.training.fire_training:[70:92]<br />==robustML.advertrain.training.trades_training:[105:114]<br />        output = self.model(x)<br />        pred = torch.argmax(output, dim=1)<br /><br />        self.metrics.update(x, y, pred, loss)<br /><br />        return (<br />            loss.item(),<br />            len(x),<br />        )<br /><br />    def val_batch(self, x: torch.Tensor, y: torch.Tensor, epoch: int) -> tuple[float, int]:<br />        """<br />        Validate the model for one batch of data.<br /><br />        Args:<br />            x (torch.Tensor): The input data.<br />            y (torch.Tensor): The labels corresponding to the input data.<br />            epoch (int): The current epoch number.<br /><br />        Returns:<br />            tuple[float, int]: A tuple containing the loss value and the batch size.<br />        """</td>
+                    <td>Similar lines in 2 files<br />==robustML.advertrain.training.fire_training:[70:92]<br />==robustML.advertrain.training.trades_training:[105:114]<br />            output = self.model(x)<br />            pred = torch.argmax(output, dim=1)<br /><br />            self.metrics.update(x, y, pred, loss)<br /><br />        return (<br />            loss.item(),<br />            len(x),<br />        )</td>
                     <td>duplicate-code</td>
                     <td>R0801</td>
                   </tr>
@@ -676,7 +676,7 @@
                     <td>0</td>
                     <td>refactor</td>
                     <td></td>
-                    <td>Similar lines in 2 files<br />==robustML.advertrain.dependencies.fire:[110:116]<br />==robustML.advertrain.dependencies.trades:[87:93]<br />            grad = torch.autograd.grad(loss_kl, [x_adv])[0]<br />            x_adv = x_adv.detach() + step_size * torch.sign(grad.detach())<br />            x_adv = torch.min(<br />                torch.max(x_adv, x_natural - epsilon), x_natural + epsilon<br />            )<br />            x_adv = torch.clamp(x_adv, 0.0, 1.0)</td>
+                    <td>Similar lines in 2 files<br />==robustML.advertrain.dependencies.fire:[110:116]<br />==robustML.advertrain.dependencies.trades:[87:93]<br />                    grad = torch.autograd.grad(loss_kl, [x_adv])[0]<br />                    x_adv = x_adv.detach() + step_size * torch.sign(grad.detach())<br />                    x_adv = torch.min(<br />                        torch.max(x_adv, x_natural - epsilon), x_natural + epsilon<br />                    )<br />                    x_adv = torch.clamp(x_adv, 0.0, 1.0)</td>
                     <td>duplicate-code</td>
                     <td>R0801</td>
                   </tr>
