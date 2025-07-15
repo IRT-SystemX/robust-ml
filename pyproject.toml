@@ -1,0 +1,24 @@
+[project]
+name = "robust-ml"
+description="Robustness library for binary image classification tasks"
+readme = "README.md"
+dynamic = ["dependencies"]
+version= "0.1.1"
+license ="Apache-2.0"
+requires-python = ">=3.9,<3.11"
+authors = [
+  {name = "IRT-SystemX.fr"},
+  {email="support@irt-systemx.fr"}
+]
+
+[project.urls]
+Homepage = "https://irt-systemx.github.io/robust-ml"
+Documentation = "https://irt-systemx.github.io/robust-ml"
+Repository = "https://github.com/IRT-SystemX/robust-ml"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"

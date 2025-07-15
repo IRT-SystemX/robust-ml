@@ -1,0 +1,154 @@
+robustML/advertrain/dependencies/autoattack.py:79:5: E741 Ambiguous variable name: `l`
+   |
+77 |     u = torch.min(1 - x - y, x + y)
+78 |     u = torch.min(torch.zeros_like(y), u)
+79 |     l = -torch.clone(y).abs()
+   |     ^ E741
+80 |     d = u.clone()
+81 |     bs, indbs = torch.sort(-torch.cat((u, l), 1), dim=1)
+   |
+
+robustML/advertrain/dependencies/autoattack.py:209:20: E714 [*] Test for object identity should be `is not`
+    |
+207 |         """
+208 |         assert self.norm in ['Linf', 'L2', 'L1']
+209 |         assert not self.eps is None
+    |                    ^^^^^^^^^^^^^^^^ E714
+210 |         if self.device is None:
+211 |             self.device = x.device
+    |
+    = help: Convert to `is not`
+
+robustML/advertrain/dependencies/autoattack.py:272:13: E722 Do not use bare `except`
+    |
+270 |             try:
+271 |                 t = x.abs().view(x.shape[0], -1).sum(dim=-1)
+272 |             except:
+    |             ^^^^^^ E722
+273 |                 t = x.abs().reshape([x.shape[0], -1]).sum(dim=-1)
+274 |             return x / (t.view(-1, *([1] * self.ndims)) + 1e-12)
+    |
+
+robustML/advertrain/dependencies/autoattack.py:333:16: E714 [*] Test for object identity should be `is not`
+    |
+331 |             delta = L1_projection(x, t, self.eps)
+332 |             x_adv = x + t + delta
+333 |         if not x_init is None:
+    |                ^^^^^^^^^^^^^^ E714
+334 |             x_adv = x_init.clone()
+335 |             if self.norm == 'L1' and self.verbose:
+    |
+    = help: Convert to `is not`
+
+robustML/advertrain/dependencies/autoattack.py:348:17: E731 Do not assign a `lambda` expression, use a `def`
+    |
+346 |                 criterion_indiv = nn.CrossEntropyLoss(reduction='none')
+347 |             elif self.loss == 'ce-targeted-cfts':
+348 |                 criterion_indiv = lambda x, y: -1. * F.cross_entropy(x, y, reduction='none')
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E731
+349 |             elif self.loss == 'dlr':
+350 |                 criterion_indiv = self.dlr_loss
+    |
+    = help: Rewrite `criterion_indiv` as a `def`
+
+robustML/advertrain/dependencies/autoattack.py:393:9: F841 Local variable `counter` is assigned to but never used
+    |
+391 |             [1] * self.ndims)]).to(self.device).detach()
+392 |         x_adv_old = x_adv.clone()
+393 |         counter = 0
+    |         ^^^^^^^ F841
+394 |         k = self.n_iter_2 + 0
+395 |         if self.norm == 'L1':
+    |
+    = help: Remove assignment to unused variable `counter`
+
+robustML/advertrain/dependencies/autoattack.py:494:29: F841 Local variable `n_reduced` is assigned to but never used
+    |
+492 |                             ind_fl_osc = (fl_oscillation > 0).nonzero().squeeze()
+493 |                             step_size[ind_fl_osc] /= 2.0
+494 |                             n_reduced = fl_oscillation.sum()
+    |                             ^^^^^^^^^ F841
+495 |
+496 |                             x_adv[ind_fl_osc] = x_best[ind_fl_osc].clone()
+    |
+    = help: Remove assignment to unused variable `n_reduced`
+
+robustML/advertrain/dependencies/autoattack.py:531:16: E714 [*] Test for object identity should be `is not`
+    |
+529 |         """
+530 |         assert self.loss in ['ce', 'dlr']
+531 |         if not y is None and len(y.shape) == 0:
+    |                ^^^^^^^^^ E714
+532 |             x.unsqueeze_(0)
+533 |             y.unsqueeze_(0)
+    |
+    = help: Convert to `is not`
+
+robustML/advertrain/dependencies/autoattack.py:549:9: F841 Local variable `loss` is assigned to but never used
+    |
+547 | …     else:
+548 | …         acc = y_pred != y
+549 | …     loss = -1e10 * torch.ones_like(acc).float()
+    |       ^^^^ F841
+550 | …     if self.verbose:
+551 | …         print('-------------------------- ', 'running {}-attack with epsilon {:.5f}'.format(self.norm, self.eps), '----------------…
+    |
+    = help: Remove assignment to unused variable `loss`
+
+robustML/advertrain/dependencies/autoattack.py:625:9: F841 Local variable `eps_target` is assigned to but never used
+    |
+623 |             x_init = x + torch.randn_like(x)
+624 |             x_init += L1_projection(x, x_init - x, 1. * float(epss[0]))
+625 |         eps_target = float(epss[-1])
+    |         ^^^^^^^^^^ F841
+626 |         if self.verbose:
+627 |             print('total iter: {}'.format(sum(iters)))
+    |
+    = help: Remove assignment to unused variable `eps_target`
+
+robustML/advertrain/dependencies/autoattack.py:634:20: E714 [*] Test for object identity should be `is not`
+    |
+632 |             self.eps = eps + 0.
+633 |             #
+634 |             if not x_init is None:
+    |                    ^^^^^^^^^^^^^^ E714
+635 |                 x_init += L1_projection(x, x_init - x, 1. * eps)
+636 |             x_init, acc, loss, x_adv = self.attack_single_run(x, y, x_init=x_init)
+    |
+    = help: Convert to `is not`
+
+robustML/advertrain/dependencies/cleverhans/utils.py:23:26: F541 [*] f-string without any placeholders
+   |
+21 |     """
+22 |     if norm not in [np.inf, 1, 2]:
+23 |         raise ValueError(f"Norm must be np.inf, 1, or 2.")
+   |                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ F541
+24 |
+25 |     elif norm == np.inf:
+   |
+   = help: Remove extraneous `f` prefix
+
+robustML/advertrain/dependencies/cleverhans/utils.py:83:26: F541 [*] f-string without any placeholders
+   |
+81 |         assert torch.allclose(opt_pert_norm, one_mask, rtol=1e-05, atol=1e-08)
+82 |     else:
+83 |         raise ValueError(f"Only L-inf, L1 and L2 norms are currently implemented.")
+   |                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ F541
+84 |
+85 |     scaled_perturbation = eps * optimal_perturbation
+   |
+   = help: Remove extraneous `f` prefix
+
+robustML/advertrain/dependencies/fire.py:97:9: F841 Local variable `batch_size` is assigned to but never used
+   |
+95 |     else:
+96 |         model.eval()  # moving to eval mode to freeze batchnorm stats
+97 |         batch_size = len(x_natural)
+   |         ^^^^^^^^^^ F841
+98 |         # generate adversarial example
+99 |         x_adv = x_natural.detach() + 0.0  # the + 0. is for copying the tensor
+   |
+   = help: Remove assignment to unused variable `batch_size`
+
+Found 14 errors.
+[*] 6 fixable with the `--fix` option (6 hidden fixes can be enabled with the `--unsafe-fixes` option).
