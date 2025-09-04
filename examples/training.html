@@ -306,7 +306,7 @@ BETA = 1
 <section id="Fit-the-model">
 <h2>Fit the model<a class="headerlink" href="#Fit-the-model" title="Link to this heading"></a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>path = os.path.join(MODELS_PATH,
@@ -354,12 +354,40 @@ Validation Loss:  0.566, Acc:  0.773, Recall:  0.776, Precision:  0.739,F1 Score
 Validation loss decreased (inf --&gt; 0.566105). Saving model ...
 </pre></div></div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-Epochs 2/2 : Training:   7%|▋         | 56/750 [00:14&lt;02:29,  4.65it/s]
+Epochs 2/2 : Training: 100%|██████████| 750/750 [02:45&lt;00:00,  4.54it/s]
+Validation: 100%|██████████| 33/33 [00:08&lt;00:00,  4.12it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Epoch 2/2
+Train Loss:  0.538, Acc:  0.797, Recall:  0.795, Precision:  0.799,F1 Score:  0.797
+Validation Loss:  0.514, Acc:  0.837, Recall:  0.867, Precision:  0.795,F1 Score:  0.829
+Validation loss decreased (0.566105 --&gt; 0.514262). Saving model ...
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;loss&#39;: [0.6897706389427185, 0.5378051996231079],
+ &#39;acc&#39;: [0.6733333468437195, 0.79666668176651],
+ &#39;val_loss&#39;: [0.5661050081253052, 0.5142622590065002],
+ &#39;val_acc&#39;: [0.7727272510528564, 0.8371211886405945],
+ &#39;optimizer&#39;: &#39;Adam (\nParameter Group 0\n    amsgrad: False\n    betas: (0.9, 0.999)\n    capturable: False\n    differentiable: False\n    eps: 1e-08\n    foreach: None\n    fused: False\n    lr: 0.0001\n    maximize: False\n    weight_decay: 0\n)&#39;,
+ &#39;loss_func&#39;: &#39;None&#39;,
+ &#39;epochs&#39;: 2,
+ &#39;patience&#39;: 2}
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">

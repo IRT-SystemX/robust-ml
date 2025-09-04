@@ -53,7 +53,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#ouput">Ouput</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage-pattern">Usage pattern</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-run-the-provided-example">How to run the provided example</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">🎡 Architecture</a></li>
@@ -115,8 +118,8 @@ virtualenv<span class="w"> </span>-p<span class="w"> </span>&lt;path/to/python3.
 <p>As output, the library returns a model saved as a local .pth file.</p>
 </section>
 </section>
-<section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<section id="usage-pattern">
+<h2>Usage pattern<a class="headerlink" href="#usage-pattern" title="Link to this heading"></a></h2>
 <p>You have to generate a dataloader in pytorch.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">trainer</span> <span class="o">=</span> <span class="n">AdversarialTraining</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">your_architecture</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="n">your_optimizer</span><span class="p">,</span> <span class="n">loss_func</span><span class="o">=</span><span class="n">your_criterion</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">your_device</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="n">your_epsilon</span><span class="p">)</span>
 <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">epochs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">train_dataloader</span><span class="o">=</span><span class="n">your_train_dataloader</span><span class="p">,</span> <span class="n">val_dataloader</span><span class="o">=</span><span class="n">your_val_dataloader</span><span class="p">,</span> <span class="n">patience</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">checkpoint</span><span class="o">=</span><span class="n">your_path</span><span class="p">)</span>
@@ -124,6 +127,14 @@ virtualenv<span class="w"> </span>-p<span class="w"> </span>&lt;path/to/python3.
 </div>
 <p>For more informations, you can follow the notebook example here :
 <a class="reference internal" href="examples/training.html"><span class="std std-doc">Notebook</span></a></p>
+<section id="how-to-run-the-provided-example">
+<h3>How to run the provided example<a class="headerlink" href="#how-to-run-the-provided-example" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Download the example dataset <a class="reference external" href="http://minio-storage.apps.confianceai-public.irtsysx.fr/ml-models/robust-ml-dataset.zip">here</a>
+and unzip it in the <code class="docutils literal notranslate"><span class="pre">examples/</span></code> folder. Once done, you should have subfolder named <code class="docutils literal notranslate"><span class="pre">/examples/dataset/c00</span></code></p></li>
+<li><p>Launch the jupyter notebook <code class="docutils literal notranslate"><span class="pre">examples/training.ipynb</span></code></p></li>
+</ul>
+</section>
 </section>
 </section>
 

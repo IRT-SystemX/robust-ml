@@ -547,6 +547,61 @@
         </div>
         <div class="card bg-light mb-3">
           <div class="card-header">
+            <h5 class="mb-0">robustML.advertrain.dependencies.cleverhans.__init__</h5>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-hover table-sm">
+                <thead class="thead-light">
+                  <tr scope="col">
+                    <th></th>
+                    <th data-field="line">Line</th>
+                    <th data-field="column">Column</th>
+                    <th data-field="type">Type</th>
+                    <th data-field="obj">Object</th>
+                    <th data-field="message">Message</th>
+                    <th data-field="symbol">Symbol</th>
+                    <th data-field="message_id">Message Id</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-primary">
+                    <td><a href="/blob//robustML/advertrain/dependencies/cleverhans/__init__.py#L1" class="btn btn-light btn-sm" role="button"><i class="fas fa-code"></i> Source</a></td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>refactor</td>
+                    <td></td>
+                    <td>Similar lines in 2 files<br />==robustML.advertrain.training.fire_training:[70:92]<br />==robustML.advertrain.training.trades_training:[105:114]<br />        output = self.model(x)<br />        pred = torch.argmax(output, dim=1)<br /><br />        self.metrics.update(x, y, pred, loss)<br /><br />        return (<br />            loss.item(),<br />            len(x),<br />        )<br /><br />    def val_batch(self, x: torch.Tensor, y: torch.Tensor, epoch: int) -> tuple[float, int]:<br />        """<br />        Validate the model for one batch of data.<br /><br />        Args:<br />            x (torch.Tensor): The input data.<br />            y (torch.Tensor): The labels corresponding to the input data.<br />            epoch (int): The current epoch number.<br /><br />        Returns:<br />            tuple[float, int]: A tuple containing the loss value and the batch size.<br />        """</td>
+                    <td>duplicate-code</td>
+                    <td>R0801</td>
+                  </tr>
+                  <tr class="table-primary">
+                    <td><a href="/blob//robustML/advertrain/dependencies/cleverhans/__init__.py#L1" class="btn btn-light btn-sm" role="button"><i class="fas fa-code"></i> Source</a></td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>refactor</td>
+                    <td></td>
+                    <td>Similar lines in 2 files<br />==robustML.advertrain.dependencies.fire:[110:116]<br />==robustML.advertrain.dependencies.trades:[87:93]<br />                    grad = torch.autograd.grad(loss_kl, [x_adv])[0]<br />                    x_adv = x_adv.detach() + step_size * torch.sign(grad.detach())<br />                    x_adv = torch.min(<br />                        torch.max(x_adv, x_natural - epsilon), x_natural + epsilon<br />                    )<br />                    x_adv = torch.clamp(x_adv, 0.0, 1.0)</td>
+                    <td>duplicate-code</td>
+                    <td>R0801</td>
+                  </tr>
+                  <tr class="table-primary">
+                    <td><a href="/blob//robustML/advertrain/dependencies/cleverhans/__init__.py#L1" class="btn btn-light btn-sm" role="button"><i class="fas fa-code"></i> Source</a></td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>refactor</td>
+                    <td></td>
+                    <td>Similar lines in 2 files<br />==robustML.advertrain.training.fire_training:[75:95]<br />==robustML.advertrain.training.trades_training:[73:92]<br />        return (<br />            loss.item(),<br />            len(x),<br />        )<br /><br />    def val_batch(self, x: torch.Tensor, y: torch.Tensor, epoch: int) -> tuple[float, int]:<br />        """<br />        Validate the model on a batch of data.<br /><br />        Args:<br />            x (torch.Tensor): Input data.<br />            y (torch.Tensor): Target labels.<br /><br />        Returns:<br />            tuple[float, int]: Tuple containing the loss and the number of examples in the batch.<br />        """<br />        x, y = x.to(self.device), y.to(self.device)<br /><br />        with torch.no_grad():</td>
+                    <td>duplicate-code</td>
+                    <td>R0801</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="card bg-light mb-3">
+          <div class="card-header">
             <h5 class="mb-0">robustML.advertrain.dependencies.cleverhans.fast_gradient_method</h5>
           </div>
           <div class="card-body">
@@ -1249,36 +1304,6 @@
                     <td>Too many positional arguments (7/5)</td>
                     <td>too-many-positional-arguments</td>
                     <td>R0917</td>
-                  </tr>
-                  <tr class="table-primary">
-                    <td><a href="/blob//robustML/advertrain/training/autoattack_training.py#L1" class="btn btn-light btn-sm" role="button"><i class="fas fa-code"></i> Source</a></td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>refactor</td>
-                    <td></td>
-                    <td>Similar lines in 2 files<br />==robustML.advertrain.training.fire_training:[70:92]<br />==robustML.advertrain.training.trades_training:[105:114]<br />        output = self.model(x)<br />        pred = torch.argmax(output, dim=1)<br /><br />        self.metrics.update(x, y, pred, loss)<br /><br />        return (<br />            loss.item(),<br />            len(x),<br />        )<br /><br />    def val_batch(self, x: torch.Tensor, y: torch.Tensor, epoch: int) -> tuple[float, int]:<br />        """<br />        Validate the model for one batch of data.<br /><br />        Args:<br />            x (torch.Tensor): The input data.<br />            y (torch.Tensor): The labels corresponding to the input data.<br />            epoch (int): The current epoch number.<br /><br />        Returns:<br />            tuple[float, int]: A tuple containing the loss value and the batch size.<br />        """</td>
-                    <td>duplicate-code</td>
-                    <td>R0801</td>
-                  </tr>
-                  <tr class="table-primary">
-                    <td><a href="/blob//robustML/advertrain/training/autoattack_training.py#L1" class="btn btn-light btn-sm" role="button"><i class="fas fa-code"></i> Source</a></td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>refactor</td>
-                    <td></td>
-                    <td>Similar lines in 2 files<br />==robustML.advertrain.training.fire_training:[75:95]<br />==robustML.advertrain.training.trades_training:[73:92]<br />        return (<br />            loss.item(),<br />            len(x),<br />        )<br /><br />    def val_batch(self, x: torch.Tensor, y: torch.Tensor, epoch: int) -> tuple[float, int]:<br />        """<br />        Validate the model on a batch of data.<br /><br />        Args:<br />            x (torch.Tensor): Input data.<br />            y (torch.Tensor): Target labels.<br /><br />        Returns:<br />            tuple[float, int]: Tuple containing the loss and the number of examples in the batch.<br />        """<br />        x, y = x.to(self.device), y.to(self.device)<br /><br />        with torch.no_grad():</td>
-                    <td>duplicate-code</td>
-                    <td>R0801</td>
-                  </tr>
-                  <tr class="table-primary">
-                    <td><a href="/blob//robustML/advertrain/training/autoattack_training.py#L1" class="btn btn-light btn-sm" role="button"><i class="fas fa-code"></i> Source</a></td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>refactor</td>
-                    <td></td>
-                    <td>Similar lines in 2 files<br />==robustML.advertrain.dependencies.fire:[110:116]<br />==robustML.advertrain.dependencies.trades:[87:93]<br />            grad = torch.autograd.grad(loss_kl, [x_adv])[0]<br />            x_adv = x_adv.detach() + step_size * torch.sign(grad.detach())<br />            x_adv = torch.min(<br />                torch.max(x_adv, x_natural - epsilon), x_natural + epsilon<br />            )<br />            x_adv = torch.clamp(x_adv, 0.0, 1.0)</td>
-                    <td>duplicate-code</td>
-                    <td>R0801</td>
                   </tr>
                 </tbody>
               </table>
